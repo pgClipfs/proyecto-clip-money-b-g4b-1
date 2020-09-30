@@ -17,6 +17,6 @@ https://trello.com/b/OZr7tZq4/clip-g4b
 ## Autores
 
 * **Ignacio Javier Pucheta** - Github: (https://github.com/ipucheta110962)
-
+* **Marina Santiso** - Github: (https://github.com/110996santisomarina)
 
 
