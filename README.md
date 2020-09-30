@@ -18,5 +18,6 @@ https://trello.com/b/OZr7tZq4/clip-g4b
 
 * **Ignacio Javier Pucheta** - Github: (https://github.com/ipucheta110962)
 * **Marina Santiso** - Github: (https://github.com/110996santisomarina)
+* **Agustin Merlino** - Github: (https://github.com/agumerlino)
 
 
