@@ -20,4 +20,5 @@ https://trello.com/b/OZr7tZq4/clip-g4b
 * **Marina Santiso** - Github: (https://github.com/110996santisomarina)
 * **Agustin Merlino** - Github: (https://github.com/agumerlino)
 * **Gina Piuzzi** - Github: (https://github.com/GPiuzzi)
+* **Mauricio Martín** -  Github: (https://github.com/Brynfox)
 
