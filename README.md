@@ -22,4 +22,5 @@ https://trello.com/b/OZr7tZq4/clip-g4b
 * **Gina Piuzzi** - Github: (https://github.com/GPiuzzi)
 * **Mauricio Martín** -  Github: (https://github.com/Brynfox)
 * **Melisa Guzman** - Github: (https://github.com/meliign14)
+* **Marcos Marangoni** - Github: (https://github.com/Marangoni1997)
 
