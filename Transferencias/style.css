@@ -114,3 +114,7 @@ a[aria-expanded="true"] {
   background-color: #112632 !important;
   border-color: #112632 !important;
 }
+.card img{
+  max-height: 30% !important;
+  width: auto !important;
+}
