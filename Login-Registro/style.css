@@ -99,3 +99,12 @@
 
   }
   
+  .tab-pane .card-body{
+    height: 55vh;
+  }
+  .card-body{
+    padding: 1.5rem !important;
+  }
+  .padding-b{
+    padding-bottom: 1.6rem !important;
+  }
