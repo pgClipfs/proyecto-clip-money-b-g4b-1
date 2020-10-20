@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- COMIENZO HEAD -->
+    <link rel="shortcut icon" href="icon.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Clip Money</title>
+    <!-- COMIENZO IMPORTACIÓN LIBRERIA BOOTSTRAP -->
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style-transferencia.css" />
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <!-- FIN IMPORTACIÓN LIBRERIA BOOTSTRAP -->
+    <!-- FIN HEAD -->
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="./perfil-user.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">Nombre Usuario</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Links -->
+            <ul class="list-unstyled components">
+                <li><a href="#">Mi Cuenta</a></li>
+                <li><a href="#">Mi Saldo</a></li>
+                <li><a href="#">Transferencias</a></li>
+                <li class="active">
+                    <!-- Link with dropdown items -->
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Inversiones</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="transferencias-cuentas.html">Transacciones de divisas</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                    </ul>
+            </ul>
+
+            <img class="logo mb-2" src="images/logo1-removebg.png" alt="logo">
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-12 ">
+                            <div class="page-header">
+                                <h1 class="header-transferencia">
+                                    Inversiones
+                                </h1>
+                                <br>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 align-self-center text-center">
+
+                                    <img class="img-responsive">
+                                    <img src="moneda.jpg" class="rounded" align-items="center"
+                                        style="border: 5px solid darkcyan" width="300" height="300" alt="transacciones">
+                                </div>
+
+                                <div class="col-md-6 col-sm-12 align-self-center text-center">
+
+                                    <img class="img-responsive">
+                                    <img src="cajafuerte.jpg" class="rounded" style="border: 5px solid darkcyan"
+                                        width="300" height="300" alt="plazofijo">
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button type="button" data-toggle="modal" data-target="#modal-divisas"
+                                        class="btn btn-dark m-3 btn-lg btn-block">Transacciones de divisas</button>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <button type="button" data-toggle="modal" data-target="#modal-plazofijo"
+                                        class="btn btn-dark m-3 btn-lg btn-block">Plazo Fijo</button>
+
+                                </div>
+
+
+                                <!-- FIN CUERPO PÁGINA -->
+
+                                <!-- COMIENZO MODALES -->
+
+                                <!-- Modal divisas -->
+                                <div class="modal fade" id="modal-divisas" tabindex="-1" role="dialog"
+                                    aria-labelledby="modal-divisas" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modal-divisas">Transacciones de divisas</h5>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <label for="moneda"
+                                                            class="col-md-6 col-form-label">Moneda:</label>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-info dropdown-toggle col-md-12"
+                                                                type="button" id="dropdownMenuButton"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                                Tipo de moneda &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            </button>
+                                                            <div class="dropdown-menu"
+                                                                aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">ARS</a>
+                                                                <a class="dropdown-item" href="#">USD</a>
+                                                                <a class="dropdown-item" href="#">EUR</a>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="tipoTransaccion"
+                                                            class="col-md-6 col-form-label">Tipo de
+                                                            transacción:</label>
+                                                        <div class="form-check col-md-3">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="exampleRadios" id="exampleRadios1" value="option1"
+                                                                checked>
+                                                            <label class="form-check-label" for="exampleRadios1">
+                                                                Compra
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-md-3">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="exampleRadios" id="exampleRadios2"
+                                                                value="option2">
+                                                            <label class="form-check-label" for="exampleRadios2">
+                                                                Venta
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                        <div class="form-group row">
+                                                            <label for="montoTransacción"
+                                                                class="col-md-6 col-form-label">Monto:</label>
+                                                            <input type="text" class="form-control col-md-4"
+                                                                id="formGroupExampleInput">
+
+                                                        </div>
+                                                   
+                                                        <div class="form-group row">
+                                                            <label for="saldoCuenta"
+                                                                class="col-md-6 col-form-label">Saldo
+                                                                de la
+                                                                Cuenta:</label>
+                                                            <input class="form-control col-md-4" type="text"
+                                                                placeholder="" readonly>
+                                                        </div>
+
+                                                        <small id="passwordHelpBlock" class="form-text text-muted"
+                                                            style="color: #adadad">
+                                                            Complete los datos para realizar la transacción
+                                                        </small>
+
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-info">Aceptar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIN Modal divisas -->
+
+                                <!-- Modal Plazo fijo -->
+                                <div class="modal fade" id="modal-plazofijo" tabindex="-1" role="dialog"
+                                    aria-labelledby="modal-plazofijo" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modal-plazofijo">Plazo fijo</h5>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <label for="moneda"
+                                                            class="col-md-6 col-form-label">Moneda:</label>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-info dropdown-toggle col-md-12"
+                                                                type="button" id="dropdownMenuButton"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                                Tipo de moneda &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            </button>
+                                                            <div class="dropdown-menu"
+                                                                aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">ARS</a>
+                                                                <a class="dropdown-item" href="#">USD</a>
+                                                                <a class="dropdown-item" href="#">EUR</a>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <div class="form-group row">
+
+                                                        <label for="montoTransacción"
+                                                            class="col-md-6 col-form-label">Monto:</label>
+                                                        <input type="text" class="form-control col-md-4"
+                                                            id="formGroupExampleInput">
+                                                    </div>
+                                                    <div class="form-group row">
+
+                                                        <label for="fecha" class="col-md-6 col-form-label">Fecha
+                                                            finalización:</label>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-info dropdown-toggle col-md-12"
+                                                                type="button" id="dropdownMenuButton"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                                Días &nbsp;&nbsp;&nbsp;&nbsp;
+                                                            </button>
+                                                            <div class="dropdown-menu"
+                                                                aria-labelledby="dropdownMenuButton">
+                                                                <a class="dropdown-item" href="#">30</a>
+                                                                <a class="dropdown-item" href="#">60</a>
+                                                                <a class="dropdown-item" href="#">90</a>
+                                                                <a class="dropdown-item" href="#">180</a>
+                                                                <a class="dropdown-item" href="#">360</a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="saldoCuenta" class="col-md-6 col-form-label">Saldo
+                                                            de la
+                                                            Cuenta:</label>
+                                                        <input class="form-control col-md-4" type="text" placeholder=""
+                                                            readonly>
+                                                    </div>
+                                                    <small id="passwordHelpBlock" class="form-text text-muted"
+                                                        style="color: #adadad">
+                                                        Complete los datos para realizar la transacción
+                                                    </small>
+
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-info">Aceptar</button>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            </nav>
+        </div>
+
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+
+
+
+    <!-- FIN IMPORTANCIÓN LIBRERIAS JAVASCRIPT -->
+</body>
+
+</html>

@@ -4,7 +4,8 @@
 }
 
 .bg-image {
-    background-color: #00c389;
+    background-color: #2eb1d6;
+    background-size: 500px;
     background-image: url(logo1.png);
     background-position: center center;
     background-repeat: no-repeat;
@@ -86,7 +87,7 @@
 
   .btn-custom{
       color:#112632;
-      background-color: #00c389;
+      background-color: #2eb1d6;
   }
 
   .bg-custom{
