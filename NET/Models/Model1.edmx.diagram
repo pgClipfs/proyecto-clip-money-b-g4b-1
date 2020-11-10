@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f2999994be34f17a93300fa4dc5eac7" Name="Diagram1">
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Barrios" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Cuentas" Width="1.5" PointX="12" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.CuentaTipo" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Localidades" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Monedas" Width="1.5" PointX="12" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Operaciones" Width="1.5" PointX="14.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.PagoFacturas" Width="1.5" PointX="17.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Paises" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.PlazosFijos" Width="1.5" PointX="14.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Provincias" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Servicios" Width="1.5" PointX="15" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.ServiciosTipo" Width="1.5" PointX="12.75" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.TipoOperacion" Width="1.5" PointX="12" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Billetera_ElectronicaModel.Usuarios" Width="1.5" PointX="9.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Barrios_Localidades" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Usuarios_Barrios" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Cuentas_CuentaTipo" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Cuentas_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Operaciones_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_PagoFacturas_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_PlazosFijos_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Localidades_Provincias" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Operaciones_Monedas" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Operaciones_TipoOperacion" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_PagoFacturas_Servicios" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Provincias_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="Billetera_ElectronicaModel.FK_Servicios_ServiciosTipo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
