@@ -1,0 +1,9 @@
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\obj\Debug\ConexionDB.csprojAssemblyReference.cache
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\obj\Debug\ConexionDB.csproj.CoreCompileInputs.cache
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\bin\Debug\ConexionDB.dll
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\bin\Debug\ConexionDB.pdb
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\bin\Debug\Dapper.dll
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\bin\Debug\Dapper.xml
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\obj\Debug\ConexionDB.csproj.CopyComplete
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\obj\Debug\ConexionDB.dll
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\ConexionDB\obj\Debug\ConexionDB.pdb

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI.csproj", "{08E3F393-2BC7-44E6-853E-14BA997ECDCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexionDB", "..\ConexionDB\ConexionDB.csproj", "{6634746F-35C4-4EBB-AAF1-8A34265F13D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08E3F393-2BC7-44E6-853E-14BA997ECDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08E3F393-2BC7-44E6-853E-14BA997ECDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08E3F393-2BC7-44E6-853E-14BA997ECDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08E3F393-2BC7-44E6-853E-14BA997ECDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6634746F-35C4-4EBB-AAF1-8A34265F13D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6634746F-35C4-4EBB-AAF1-8A34265F13D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6634746F-35C4-4EBB-AAF1-8A34265F13D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6634746F-35C4-4EBB-AAF1-8A34265F13D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61C081CD-091F-4E8D-9E75-DD2942419F35}
+	EndGlobalSection
+EndGlobal
