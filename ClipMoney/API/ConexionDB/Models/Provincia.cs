@@ -20,5 +20,9 @@ namespace ConexionDB.Models
         /// Es el objeto Pais de la Provincia
         /// </summary>
         public Pais pais { get; set; }
+        /// <summary>
+        /// Es el id de pais de la Provincia
+        /// </summary>
+        public int id_pais { get; set; }
     }
 }

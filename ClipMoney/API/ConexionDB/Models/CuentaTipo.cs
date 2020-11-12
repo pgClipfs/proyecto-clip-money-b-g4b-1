@@ -28,6 +28,10 @@ namespace ConexionDB.Models
         /// Es el objeto Moneda de Cuenta Tipo
         /// </summary>
         public Moneda moneda { get; set; }
+        /// <summary>
+        /// Es el id de la moneda de Cuenta Tipo
+        /// </summary>
+        public int id_moneda { get; set; }
 
     }
 }

@@ -20,5 +20,9 @@ namespace ConexionDB.Models
         /// Es el objeto Localidad de Barrio
         /// </summary>
         public Localidad localidad { get; set; }
+        /// <summary>
+        /// Es el id de Localidad de Barrio
+        /// </summary>
+        public int id_localidad { get; set; }
     }
 }

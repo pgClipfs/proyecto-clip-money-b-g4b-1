@@ -25,6 +25,10 @@ namespace ConexionDB.Models
         /// </summary>
         public CuentaTipo cuentaTipo { get; set; }
         /// <summary>
+        /// Es el id del tipo de cuenta de Cuenta
+        /// </summary>
+        public int id_tipo_cuenta { get; set; }
+        /// <summary>
         /// Es el estado de la Cuenta
         /// </summary>
         public bool estado { get; set; }
@@ -39,7 +43,11 @@ namespace ConexionDB.Models
         /// <summary>
         /// Es el objeto Usuario de la Cuenta
         /// </summary>
-        public Usuario usuario { get; set; }
+        public Usuario user { get; set; }
+        /// <summary>
+        /// Referencia de usuario en Cuenta
+        /// </summary>
+        public string usuario { get; set; }
         /// <summary>
         /// Es el alias de la Cuenta
         /// </summary>

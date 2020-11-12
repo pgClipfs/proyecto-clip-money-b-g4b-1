@@ -17,8 +17,13 @@ namespace ConexionDB.Models
         /// </summary>
         public Servicio servicio { get; set; }
         /// <summary>
+        /// Es el id de servicio de Pago Factura
+        /// </summary>
+        public int id_servicio { get; set; }
+        /// <summary>
         /// Es el estado de Pago Factura
         /// </summary>
+
         public bool estado { get; set; }
         /// <summary>
         /// Es la fecha de la factura de Pago Factura
@@ -32,5 +37,9 @@ namespace ConexionDB.Models
         /// Es el objeto Cuenta asociado a Pago Factura
         /// </summary>
         public Cuenta cuenta { get; set; }
+        /// <summary>
+        /// Es el CVU de la Cuenta en Plazo Fijo
+        /// </summary>
+        public int CVU_cuenta { get; set; }
     }
 }

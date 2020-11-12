@@ -33,16 +33,19 @@ namespace ConexionDB.ADOModels
         public Usuario ObtenerUsuario(string usuario, string contrasenia)
         {
             Usuario user = new Usuario();
-            string sql = $"SELECT * FROM USUARIOS WHERE usuario = '{usuario}' and contrasenia = '{contrasenia}'";
+            string sql = $"SELECT * FROM USUARIOS WHERE usuario = '{usuario}' and contrasenia = '{contrasenia}';";
             user = GestorBD.GetObject<Usuario>(sql);
+            string sql2 = $"SELECT * FROM BARRIOS WHERE id_barrio = '{user.id_barrio}';";
+            user.barrio = GestorBD.GetObject<Barrio>(sql2);
             return user;
         }
+
 
         public bool GuardarUsuario(Usuario usuario) {
             //TODO Modificar el procedimiento para guardar el barrio
             bool resultado = false;
             string sql = @"INSERT INTO USUARIOS (usuario, nombre_titular, apellido_titular, contrasenia, telefono, mail,fecha_nacimiento,DNI,calle_direccion,numero_direccion,id_barrio)
-                        VALUES(@usuario, @nombre_titular, @apellido_titular, @contrasenia, @telefono, @mail,@fecha_nacimiento,@DNI,@calle_direccion,@numero_direccion,1)";
+                        VALUES(@usuario, @nombre_titular, @apellido_titular, @contrasenia, @telefono, @mail,@fecha_nacimiento,@DNI,@calle_direccion,@numero_direccion,1);";
 
             int cantidad = GestorBD.SaveData(sql, usuario);
             resultado = cantidad > 0 ? true : false;

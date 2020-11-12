@@ -52,6 +52,9 @@ namespace ConexionDB.Models
         /// Es el objeto Barrio de Usuario
         /// </summary>
         public Barrio barrio { get; set; }
-
+        /// <summary>
+        /// Es el id del barrio de Usuario
+        /// </summary>
+        public int id_barrio { get; set; }
     }
 }

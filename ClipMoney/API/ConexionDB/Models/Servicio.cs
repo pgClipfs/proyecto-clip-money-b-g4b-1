@@ -24,6 +24,9 @@ namespace ConexionDB.Models
         /// Es el objeto Servicio Tipo de Servicio
         /// </summary>
         public ServicioTipo servicioTipo { get; set; }
-
+        /// <summary>
+        /// Es el id de tipo servicio del Servicio
+        /// </summary>
+        public int id_tipo_servicio { get; set; }
     }
 }

@@ -17,13 +17,25 @@ namespace ConexionDB.Models
         /// </summary>
         public Cuenta cuenta { get; set; }
         /// <summary>
+        /// Es el CVU de la cuenta de la Operacion
+        /// </summary>
+        public int CVU_cuenta { get; set; }
+        /// <summary>
         /// Es el objeto Cuenta (de destino) asociada a la Operacion
         /// </summary>
         public Cuenta cuentaDestino { get; set; }
         /// <summary>
+        /// Es el CVU de la cuenta de destino de la Operacion
+        /// </summary>
+        public int CVU_cuenta_destino { get; set; }
+        /// <summary>
         /// Es el objeto Cuenta (de origen) asociada a la Operacion
         /// </summary>
         public Cuenta cuentaOrigen { get; set; }
+        /// <summary>
+        /// Es el CVU de la cuenta de origen de la Operacion
+        /// </summary>
+        public int CVU_cuenta_Origen { get; set; }
         /// <summary>
         /// Es la verificacion del Banco de la Operacion
         /// </summary>
@@ -49,6 +61,10 @@ namespace ConexionDB.Models
         /// </summary>
         public OperacionTipo operacionTipo { get; set; }
         /// <summary>
+        /// Es el id del tipo de operacion de la Operacion
+        /// </summary>
+        public int id_tipo_operacion { get; set; }
+        /// <summary>
         /// Es la verificacion (origen/destino) de la Operacion
         /// </summary>
         public bool verificacion_origen_destino { get; set; }
@@ -56,5 +72,9 @@ namespace ConexionDB.Models
         /// Es el objeto Moneda asociada a la Operacion
         /// </summary>
         public Moneda moneda { get; set; }
+        /// <summary>
+        /// Es el id de la moneda de la Operacion
+        /// </summary>
+        public int id_moneda { get; set; }
     }
 }

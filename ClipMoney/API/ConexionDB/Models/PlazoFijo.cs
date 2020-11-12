@@ -40,5 +40,9 @@ namespace ConexionDB.Models
         /// Es el objeto Cuenta del Plazo Fijo
         /// </summary>
         public Cuenta cuenta { get; set; }
+        /// <summary>
+        /// Es el CVU de la Cuenta en Plazo Fijo
+        /// </summary>
+        public int CVU_cuenta { get; set; }
     }
 }

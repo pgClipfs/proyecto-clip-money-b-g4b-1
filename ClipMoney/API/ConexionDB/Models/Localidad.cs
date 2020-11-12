@@ -20,7 +20,10 @@ namespace ConexionDB.Models
         /// Es el objeto provincia de localidad
         /// </summary>
         public Provincia provincia { get; set; }
-
+        /// <summary>
+        /// Es el id de la provincia de localidad
+        /// </summary>
+        public int id_provincia { get; set; }
 
     }
 }
