@@ -48,13 +48,18 @@
 
             <!-- Sidebar Links -->
             <ul class="list-unstyled components">
-                <li><a href="#">Mi Cuenta</a></li>
+                <li><a href="../MiCuenta/miCuenta.html">Mi Cuenta</a></li>
                         <li class="active">
                     <!-- Link with dropdown items -->
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mi Saldo</a>
-                
-                               <li><a href="#">Transferencias</a></li>
-                <li><a href="#">Inversiones</a></li>
+                    <a href="#homeSubmenu">Mi Saldo</a>
+                </li>
+                    
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Transferencias</a>
+                        <ul class="collapse show list-unstyled" id="homeSubmenu">
+                          <li><a href="../Transferencias/transferencias-cuentas.html">Transferir a cuenta</a></li>
+                          <li><a href="../Transferencias/servicios.html">Servicios</a></li>
+                        </ul>
+                <li><a href="../Inversiones/Inversiones.html">Inversiones</a></li>
             </ul>
 
             <img class="logo mb-2" src="images/logo1-removebg.png" alt="logo">

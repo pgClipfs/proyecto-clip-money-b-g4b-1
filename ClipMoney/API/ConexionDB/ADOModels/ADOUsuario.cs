@@ -42,14 +42,29 @@ namespace ConexionDB.ADOModels
 
 
         public bool GuardarUsuario(Usuario usuario) {
-            //TODO Modificar el procedimiento para guardar el barrio
             bool resultado = false;
             string sql = @"INSERT INTO USUARIOS (usuario, nombre_titular, apellido_titular, contrasenia, telefono, mail,fecha_nacimiento,DNI,calle_direccion,numero_direccion,id_barrio)
-                        VALUES(@usuario, @nombre_titular, @apellido_titular, @contrasenia, @telefono, @mail,@fecha_nacimiento,@DNI,@calle_direccion,@numero_direccion,1);";
+                        VALUES(@usuario, @nombre_titular, @apellido_titular, @contrasenia, @telefono, @mail,@fecha_nacimiento,@DNI,@calle_direccion,@numero_direccion, @id_barrio);";
 
             int cantidad = GestorBD.SaveData(sql, usuario);
             resultado = cantidad > 0 ? true : false;
 
+            return resultado;
+        }
+
+
+        public bool ModificarUsuario(Usuario usuario)
+        {
+            bool resultado = false;
+            string sql = @"UPDATE USUARIOS 
+                        SET mail = @mail,
+                            telefono = @telefono,
+                            calle_direccion = @calle_direccion,
+                            numero_direccion = @numero_direccion
+                        WHERE usuario = @usuario;";
+
+            int cantidad = GestorBD.SaveData(sql, usuario);
+            resultado = cantidad > 0 ? true : false;
             return resultado;
         }
 

@@ -17,6 +17,7 @@ namespace WebAPI.Controllers
         
         [HttpGet]
         // GET: api/Usuario/5
+        [ActionName("UsuarioLogueado")]
         public Usuario UsuarioLogueado(string usuario, string contrasenia)
         {
             Usuario user = new Usuario();
@@ -26,6 +27,7 @@ namespace WebAPI.Controllers
 
 
         [HttpPost]
+        [ActionName("GuardarUsuario")]
         public bool GuardarUsuario(Usuario usuarioG)
         {
             bool resultado = false;
@@ -34,7 +36,15 @@ namespace WebAPI.Controllers
             return resultado;
         }
 
-       
+        [HttpPost]
+        [ActionName("ModificarUsuario")]
+        public bool ModificarUsuario(Usuario usuarioM)
+        {
+            bool resultado = false;
+
+            resultado = dataAccess.ModificarUsuario(usuarioM);
+            return resultado;
+        }
 
     }
 }

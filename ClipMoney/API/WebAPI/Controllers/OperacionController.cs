@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConexionDB.ADOModels;
+using ConexionDB.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,21 +11,36 @@ namespace WebAPI.Controllers
 {
     public class OperacionController : ApiController
     {
-        // GET: api/Operacion
-        public IEnumerable<string> Get()
+        ADOOperacion dataAccess = new ADOOperacion();
+
+        [HttpGet]
+        // GET: api/Usuario/5
+        [ActionName("ObtenerOperacion")]
+        public Operacion ObtenerOperacion(int id_operacion, int CVU_cuenta)
         {
-            return new string[] { "value1", "value2" };
+            Operacion opc = new Operacion();
+            opc = dataAccess.ObtenerOperacion(id_operacion,CVU_cuenta);
+            return opc;
         }
 
-        // GET: api/Operacion/5
-        public string Get(int id)
+        [HttpGet]
+        // GET: api/Usuario/5
+        [ActionName("ObtenerOperaciones")]
+        public Operacion ObtenerOperaciones(int CVU_cuenta)
         {
-            return "value";
+            Operacion opc = new Operacion();
+            opc = dataAccess.ObtenerOperaciones(CVU_cuenta);
+            return opc;
         }
 
-        // POST: api/Operacion
-        public void Post([FromBody]string value)
+        [HttpPost]
+        [ActionName("NuevaOperacion")]
+        public bool NuevaOperacion(Operacion operacionN)
         {
+            bool resultado = false;
+
+            resultado = dataAccess.NuevaOperacion(operacionN);
+            return resultado;
         }
 
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ConexionDB.ADOModels;
+using ConexionDB.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,24 +11,32 @@ namespace WebAPI.Controllers
 {
     public class CuentaController : ApiController
     {
-        // GET: api/Cuenta
-        public IEnumerable<string> Get()
-        {
+        ADOCuenta dataAccess = new ADOCuenta();
 
-            return new string[] { "value1", "value2" };
+
+
+        [HttpGet]
+        // GET: api/Usuario/5
+        [ActionName("ObtenerCuenta")]
+        public Cuenta ObtenerCuenta(int cvu)
+        {
+            Cuenta cta = new Cuenta();
+            cta = dataAccess.ObtenerCuenta(cvu);
+            return cta;
         }
 
-        // GET: api/Cuenta/5
-        public string Get(int id)
+      
+        [HttpPost]
+        [ActionName("NuevaCuenta")]
+        public bool NuevaCuenta(Cuenta cuentaN)
         {
-            return "value";
-        }
+            bool resultado = false;
 
-        // POST: api/Cuenta
-        public void Post([FromBody]string value)
-        {
+            resultado = dataAccess.NuevaCuenta(cuentaN);
+            return resultado;
         }
+      
 
- 
+
     }
 }

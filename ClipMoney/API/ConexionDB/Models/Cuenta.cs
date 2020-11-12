@@ -39,7 +39,7 @@ namespace ConexionDB.Models
         /// <summary>
         /// Es la fecha de baja de la Cuenta
         /// </summary>
-        public DateTime fecha_baja { get; set; }
+        public DateTime? fecha_baja { get; set; }
         /// <summary>
         /// Es el objeto Usuario de la Cuenta
         /// </summary>

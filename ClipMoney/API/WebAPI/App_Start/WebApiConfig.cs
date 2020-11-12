@@ -17,7 +17,15 @@ namespace WebAPI
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                   //  defaults: new { id = RouteParameter.Optional }
+                   defaults: null,
+           constraints: new { id = @"^\d+$" } // Only integers 
+            );
+
+         
+               config.Routes.MapHttpRoute(
+                name: "ActionApi",
+                routeTemplate: "api/{controller}/{action}"
             );
         }
     }

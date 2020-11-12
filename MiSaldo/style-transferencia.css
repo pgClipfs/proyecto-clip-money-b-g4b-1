@@ -46,13 +46,12 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
+  height: fit-content;
   background:transparent;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #112632;
 }
 
 #sidebar ul p {
@@ -70,12 +69,14 @@ a:focus {
     color: #112632;
     background: #fff;
     text-decoration: none;
+    width: 99%;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #575757 !important;
     background: #fff;
+    width: 99%;
 }
 ul ul a {
   font-size: 0.9em !important;
@@ -108,7 +109,7 @@ a[data-toggle="collapse"] {
   }
   
   .profile-header-img {
-    padding: 54px;
+    padding: 3rem;
   }
   
   .profile-header-img > img.img-circle {
@@ -149,11 +150,24 @@ a[data-toggle="collapse"] {
     border-color: #112632 !important;
   }
 
-  
-.card img{
-    max-height: 30% !important;
-    width: auto !important;
+  #carouselServicios{
+  height: 30vh !important;
+  display: block;
+
   }
+  #carouselServicios .carousel-item{
+    height: 30vh !important;
+    width: auto !important;
+    
+    
+    
+  }
+  #carouselServicios .carousel-item .card img{
+    height: 20vh !important;
+    width: 100% !important;
+    object-fit: cover;
+  }
+
 
   .logo {
     height: auto;
@@ -165,7 +179,44 @@ a[data-toggle="collapse"] {
   .container-fluid{
       display: block !important;
   }
-@media (max-width: 768px) {
+
+  
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: #112632;
+  top: 5rem !important;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: #112632;
+  top: 5rem !important;
+}
+ .carousel-indicators .active{
+   background-color:  #112632;
+ }
+ .carousel-indicators li{
+   background-color:  #859096;
+ }
+ .carousel-indicators{
+   top: 10rem !important;
+ }
+ .carousel-control-next, .carousel-control-prev{
+   top: 6.2rem !important;
+ }
+ .card-img-top{
+   height: 9vh !important;
+   object-fit: cover !important; 
+ }
+@media (max-width: 640px) {
   #sidebar {
     margin-left: -250px;
   }
@@ -175,4 +226,16 @@ a[data-toggle="collapse"] {
   #sidebarCollapse {
     display: block;
   }
+  .logo{
+    position: relative;
+  }
+
+  .carousel-control-next-icon:after
+{
+  top: 2rem !important;
+}
+
+.carousel-control-prev-icon:after {
+  top: 2rem !important;
+}
 }
