@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 d-none d-md-flex bg-image"></div>
+        <div class="col-md-8 bg-custom">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                            <div class="card card-signin my-5">
+                                <div class="card-header">
+                                    <ul class="nav nav-tabs card-header-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link active link-custom" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Iniciar sesión</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link link-custom" id="registro-tab" data-toggle="tab" href="#registro" role="tab" aria-controls="registro" aria-selected="false">Registrarse</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                  <div role="tabpanel" class="tab-pane active" id="login">
+                                    <!--Inicio del login-->
+                                    <app-iniciarses></app-iniciarses>
+                                  </div>
+                                  <div role="tabpanel" class="tab-pane" id="registro">
+                                    <!--Inicio del Registro-->
+                                    <div class="card-body">
+                                      <h5 class="card-title text-center">Registrarse</h5>
+                                      <form class="form-signin">
+                                        <div class="form-row">
+                                          <div class="form-label-group col-md-4">
+                                            <input type="text" id="inputNombre" class="form-control" placeholder="Usuario" required autofocus>
+                                            <label for="inputNombre"></label>
+                                          </div>
+                                          <div class="form-label-group col-md-8">
+                                            <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required autofocus>
+                                            <label for="inputEmail"></label>
+                                          </div>
+
+                                        </div>
+                                        
+                                        <div class="form-label-group">
+                                          <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+                                          <label for="inputPassword"></label>
+                                        </div>
+                          
+                                        <div class="form-label-group">
+                                          <input type="file" id="fotoFrenteDNI" class="form-control" placeholder="Foto Frente DNI" required>
+                                          <label class="custom-file-label" for="fotoFrenteDNI">Elegir foto del frente del DNI</label>
+                                          
+                                        </div>
+                                        <div class="form-label-group">
+                                          <input type="file" id="fotoAtrasDNI" class="form-control" placeholder="Foto Atras DNI" required>
+                                          <label class="custom-file-label" for="fotoAtrasDNI">Elegir foto de atras del DNI</label>
+                                          
+                                        </div>
+                                  
+                          
+                                        
+                                        <button class="btn btn-lg btn-custom btn-block text-uppercase" type="submit">Registrarse</button>
+                                        <hr class="my-4">
+                                        
+                                      </form>
+                                    </div>
+
+                                  </div>
+                                </div>
+                                
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
