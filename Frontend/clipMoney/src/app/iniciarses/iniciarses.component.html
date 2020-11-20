@@ -1,22 +1,23 @@
 <div class="card-body">
     <h5 class="card-title text-center">Iniciar sesión</h5>
-    <form class="form-signin">
+    <form class="form-signin" #formlogin="ngForm" (ngSubmit)="loginUser()">
+
       <div class="form-label-group">
-        <input type="text" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
-        <label for="inputUsuario"></label>
+        <input type="text" id="usuario" class="form-control" placeholder="Usuario" required autofocus [(ngModel)]="user.usuario" name="usuario" #usuario="ngModel">
+        <label for="usuario"></label>
       </div>
 
       <div class="form-label-group padding-b">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-        <label for="inputPassword"></label>
+        <input type="password" id="contrasenia" class="form-control" placeholder="Contraseña" required [(ngModel)]="user.contrasenia" name="contrasenia" #contrasenia="ngModel">
+        <label for="contrasenia"></label>
       </div>
 
-      <div class="custom-control custom-checkbox mb-3 ">
+     <!-- <div class="custom-control custom-checkbox mb-3 ">
         <input type="checkbox" class="custom-control-input" id="customCheck1">
         <label class="custom-control-label" for="customCheck1">Recordar mi contraseña</label>
-      </div>
+      </div>-->
       <button class="btn btn-lg btn-custom btn-block text-uppercase" type="submit">Iniciar sesión</button>
       <hr class="my-4">
-      
-    </form>
+      </form>
+
   </div>

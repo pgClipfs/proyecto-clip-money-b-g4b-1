@@ -35,8 +35,11 @@ namespace ConexionDB.ADOModels
             Usuario user = new Usuario();
             string sql = $"SELECT * FROM USUARIOS WHERE usuario = '{usuario}' and contrasenia = '{contrasenia}';";
             user = GestorBD.GetObject<Usuario>(sql);
+            if (user != null) { 
             string sql2 = $"SELECT * FROM BARRIOS WHERE id_barrio = '{user.id_barrio}';";
-            user.barrio = GestorBD.GetObject<Barrio>(sql2);
+            user.barrio = GestorBD.GetObject<Barrio>(sql2);  }
+
+            
             return user;
         }
 
