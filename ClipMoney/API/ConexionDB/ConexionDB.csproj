@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6634746F-35C4-4EBB-AAF1-8A34265F13D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConexionDB</RootNamespace>
+    <AssemblyName>ConexionDB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\WebAPI\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\WebAPI\packages\System.Security.Cryptography.ProtectedData.5.0.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADOModels\ADOBarrio.cs" />
+    <Compile Include="ADOModels\ADOCuenta.cs" />
+    <Compile Include="ADOModels\ADOCuentaTipo.cs" />
+    <Compile Include="ADOModels\ADOLocalidad.cs" />
+    <Compile Include="ADOModels\ADOMoneda.cs" />
+    <Compile Include="ADOModels\ADOOperacion.cs" />
+    <Compile Include="ADOModels\ADOOperacionTipo.cs" />
+    <Compile Include="ADOModels\ADOPagoFactura.cs" />
+    <Compile Include="ADOModels\ADOPais.cs" />
+    <Compile Include="ADOModels\ADOPlazoFijo.cs" />
+    <Compile Include="ADOModels\ADOProvincia.cs" />
+    <Compile Include="ADOModels\ADOServicio.cs" />
+    <Compile Include="ADOModels\ADOServicioTipo.cs" />
+    <Compile Include="ADOModels\ADOUsuario.cs" />
+    <Compile Include="DataAccess\GestorBD.cs" />
+    <Compile Include="DataAccess\ICRUD.cs" />
+    <Compile Include="Helpers\Security.cs" />
+    <Compile Include="Models\Barrio.cs" />
+    <Compile Include="Models\Cuenta.cs" />
+    <Compile Include="Models\CuentaTipo.cs" />
+    <Compile Include="Models\Localidad.cs" />
+    <Compile Include="Models\Moneda.cs" />
+    <Compile Include="Models\Operacion.cs" />
+    <Compile Include="Models\PagoFactura.cs" />
+    <Compile Include="Models\Pais.cs" />
+    <Compile Include="Models\PlazoFijo.cs" />
+    <Compile Include="Models\Provincia.cs" />
+    <Compile Include="Models\Servicio.cs" />
+    <Compile Include="Models\ServicioTipo.cs" />
+    <Compile Include="Models\OperacionTipo.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

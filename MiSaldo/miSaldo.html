@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- COMIENZO HEAD -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="icon.png">
+
+    <title>Clip Money</title>
+    <!-- COMIENZO IMPORTACIÓN LIBRERIA BOOTSTRAP -->
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style-transferencia.css" />
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <!-- FIN IMPORTACIÓN LIBRERIA BOOTSTRAP -->
+    <!-- FIN HEAD -->
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="./perfil-user.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">Nombre Usuario</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Links -->
+            <ul class="list-unstyled components">
+                <li><a href="../MiCuenta/miCuenta.html">Mi Cuenta</a></li>
+                        <li class="active">
+                    <!-- Link with dropdown items -->
+                    <a href="#homeSubmenu">Mi Saldo</a>
+                </li>
+                    
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Transferencias</a>
+                        <ul class="collapse show list-unstyled" id="homeSubmenu">
+                          <li><a href="../Transferencias/transferencias-cuentas.html">Transferir a cuenta</a></li>
+                          <li><a href="../Transferencias/servicios.html">Servicios</a></li>
+                        </ul>
+                <li><a href="../Inversiones/Inversiones.html">Inversiones</a></li>
+            </ul>
+
+            <img class="logo mb-2" src="images/logo1-removebg.png" alt="logo">
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div class="page-header">
+                                <h1 class="header-micuenta">
+                                    Mi Saldo: $
+                                </h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-11 ">
+                                    <div class="list-group">
+                                        <p class="list-group-item list-group-item-action active">Movimientos recientes
+                                        </p>
+                                        <div class="list-group-item">
+                                            Tipo de Transacción
+                                        </div>
+                                        <div class="list-group-item">
+                                            Tipo de Transacción
+                                        </div>
+                                        <div class="list-group-item">
+                                            Tipo de Transacción
+                                        </div>
+                                        <div class="list-group-item">
+                                            Tipo de Transacción
+                                        </div>
+                                        <div class="list-group-item">
+                                            Tipo de Transacción
+                                        </div>
+                                        <div class="list-group-item">
+                                            Tipo de Transacción
+                                        </div>
+                                        <div class="list-group-item">
+                                            Tipo de Transacción
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="list-group">
+                                        <p class="list-group-item list-group-item-action active">Monto de la Transacción
+                                        </p>
+                                        <div class="list-group-item">
+                                            Monto (+/-)
+                                        </div>
+                                        <div class="list-group-item">
+                                            Monto (+/-)
+                                        </div>
+                                        <div class="list-group-item">
+                                            Monto (+/-)
+                                        </div>
+                                        <div class="list-group-item">
+                                            Monto (+/-)
+                                        </div>
+                                        <div class="list-group-item">
+                                            Monto (+/-)
+                                        </div>
+                                        <div class="list-group-item">
+                                            Monto (+/-)
+                                        </div>
+                                        <div class="list-group-item">
+                                            Monto (+/-)
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <button type="button" data-toggle="modal" data-target="#modal-recargarsaldo"
+                                    class="btn btn-dark m-3 btn-lg btn-block">RECARGAR SALDO</button>
+                                    <button type="button" data-toggle="modal" data-target="#modal-retirarsaldo"
+                                    class="btn btn-dark m-3 btn-lg btn-block">RETIRAR SALDO</button>
+                                    <br>
+
+                                <!-- FIN CUERPO PÁGINA -->
+
+                                <!-- COMIENZO MODALES -->
+
+                                <!-- Modal Recargar Dinero -->
+                                <div class="modal fade" id="modal-recargarsaldo" tabindex="-1" role="dialog"
+                                    aria-labelledby="modal-recargarsaldo" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="modal-recargarsaldo">Recargar Saldo</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                              Si desea recargar saldo en su cuenta, puede realizar una transferencia bancaria directamente desde su Home Banking o desde un Cajero Automático, o bien acercarse a un RapiPago o Pagofácil cercano con su número de DNI y el monto en efectivo que desea agregar a su cuenta virtual.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Entendido</button>
+                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- FIN Modal Agregar Saldo -->
+                                <!-- Inicio Modal Retirar Saldo-->
+
+                                <div class="modal fade" id="modal-retirarsaldo" tabindex="-1" role="dialog"
+                                aria-labelledby="modal-retirarsaldo" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modal-retirarsaldo">Retirar Saldo</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          Si desea retirar saldo en su cuenta, puede crear desde su App CLipMoney una clave de 4 (cuatro) dígitos. A continuación, podrá dirigirse a cualquier cajero habilitado (Red Link o Banelco), ingresar la clave recientemente creada, ¡y listo! Podrá disponer del saldo de su cuenta.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Entendido</button>
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+
+
+
+    <!-- FIN IMPORTANCIÓN LIBRERIAS JAVASCRIPT -->
+</body>
+
+</html>

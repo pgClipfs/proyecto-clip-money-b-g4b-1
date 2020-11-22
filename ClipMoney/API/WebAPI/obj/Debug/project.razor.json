@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\GINA\\Desktop\\Gina\\CLIP\\ClipMoney\\ClipMoney\\proyecto-clip-money-b-g4b-1\\ClipMoney\\API\\WebAPI\\WebAPI.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}

@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 d-none d-md-flex bg-image"></div>
+    <div class="col-md-8 bg-custom">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <div class="card card-signin my-5">
+                <mat-tab-group #tabGroup>
+                  <mat-tab label="Login">
+                    <ng-template matTabContent>
+                      <app-iniciarses></app-iniciarses>
+                    </ng-template>
+                  </mat-tab>
+                  <mat-tab label="Registrar">
+                    <ng-template matTabContent>
+                      <app-registro-usuario></app-registro-usuario>
+                    </ng-template>
+                    <!---->
+                  </mat-tab>
+                </mat-tab-group>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
