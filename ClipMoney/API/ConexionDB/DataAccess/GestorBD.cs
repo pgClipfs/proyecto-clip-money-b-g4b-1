@@ -61,8 +61,17 @@ namespace ConexionDB.DataAccess
 
             using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
             {
+                int cantidad = 0;
+                try
+                {
+                    cantidad = cnn.ExecuteScalar<int>(sql, data);
+                }
+                catch (Exception)
+                {
 
-                return cnn.ExecuteScalar<int>(sql, data);
+                   
+                }
+                return cantidad;
             }
         }
 

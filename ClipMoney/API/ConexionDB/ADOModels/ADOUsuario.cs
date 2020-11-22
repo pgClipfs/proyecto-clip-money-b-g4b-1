@@ -1,4 +1,5 @@
 ﻿using ConexionDB.DataAccess;
+using ConexionDB.Helpers;
 using ConexionDB.Models;
 using System;
 using System.Collections.Generic;
@@ -33,21 +34,27 @@ namespace ConexionDB.ADOModels
         public Usuario ObtenerUsuario(string usuario, string contrasenia)
         {
             Usuario user = new Usuario();
+            contrasenia = Security.Encrypt(contrasenia);
             string sql = $"SELECT * FROM USUARIOS WHERE usuario = '{usuario}' and contrasenia = '{contrasenia}';";
             user = GestorBD.GetObject<Usuario>(sql);
             if (user != null) { 
-            string sql2 = $"SELECT * FROM BARRIOS WHERE id_barrio = '{user.id_barrio}';";
-            user.barrio = GestorBD.GetObject<Barrio>(sql2);  }
+                string sql2 = $"SELECT * FROM BARRIOS WHERE id_barrio = '{user.id_barrio}';";
+                user.barrio = GestorBD.GetObject<Barrio>(sql2);  
 
-            
+                user.contrasenia = Security.Decrypt(user.contrasenia);
+            }
+
             return user;
         }
 
 
         public bool GuardarUsuario(Usuario usuario) {
             bool resultado = false;
+            usuario.id_barrio = usuario.barrio.id_barrio;
+            usuario.contrasenia = Security.Encrypt(usuario.contrasenia);
             string sql = @"INSERT INTO USUARIOS (usuario, nombre_titular, apellido_titular, contrasenia, telefono, mail,fecha_nacimiento,DNI,calle_direccion,numero_direccion,id_barrio)
-                        VALUES(@usuario, @nombre_titular, @apellido_titular, @contrasenia, @telefono, @mail,@fecha_nacimiento,@DNI,@calle_direccion,@numero_direccion, @id_barrio);";
+                            OUTPUT Inserted.id_usuario
+                            VALUES(@usuario, @nombre_titular, @apellido_titular, @contrasenia, @telefono, @mail,@fecha_nacimiento,@DNI,@calle_direccion,@numero_direccion, @id_barrio);";
 
             int cantidad = GestorBD.SaveData(sql, usuario);
             resultado = cantidad > 0 ? true : false;

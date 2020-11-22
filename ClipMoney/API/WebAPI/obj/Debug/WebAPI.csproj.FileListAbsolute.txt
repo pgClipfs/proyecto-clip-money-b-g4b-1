@@ -199,3 +199,6 @@ C:\Users\GINA\Desktop\Gina\CLIP\ClipMoney\ClipMoney\proyecto-clip-money-b-g4b-1\
 C:\Users\GINA\Desktop\Gina\CLIP\ClipMoney\ClipMoney\proyecto-clip-money-b-g4b-1\ClipMoney\API\WebAPI\bin\System.Web.Cors.dll
 C:\Users\GINA\Desktop\Gina\CLIP\ClipMoney\ClipMoney\proyecto-clip-money-b-g4b-1\ClipMoney\API\WebAPI\bin\System.Web.Http.Cors.dll
 C:\Users\GINA\Desktop\Gina\CLIP\ClipMoney\ClipMoney\proyecto-clip-money-b-g4b-1\ClipMoney\API\WebAPI\bin\System.Web.Http.Cors.xml
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\WebAPI\bin\System.Web.Cors.dll
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\WebAPI\bin\System.Web.Http.Cors.dll
+C:\Users\Marina\Documents\proyecto-clip-money-b-g4b-1\ClipMoney\API\WebAPI\bin\System.Web.Http.Cors.xml

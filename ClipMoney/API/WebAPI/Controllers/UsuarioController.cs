@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace WebAPI.Controllers
 {
+    
     public class UsuarioController : ApiController
     {
         ADOUsuario dataAccess = new ADOUsuario();
@@ -28,6 +30,7 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [ActionName("GuardarUsuario")]
+        [ResponseType(typeof(bool))]
         public bool GuardarUsuario(Usuario usuarioG)
         {
             bool resultado = false;
@@ -46,5 +49,14 @@ namespace WebAPI.Controllers
             return resultado;
         }
 
+
+        [HttpPost]
+        [ActionName("PruebaUsuario")]
+        public bool PruebaUsuario([FromBody] int prueba)
+        {
+            bool resultado = false;
+            prueba += 1;
+            return resultado;
+        }
     }
 }

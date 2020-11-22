@@ -20,84 +20,22 @@
                             <div class="col-lg-10 col-xl-7 mx-auto">
                                 <div class="card card-signin my-5">
                                     <div class="card-header">
-                                        <ul class="nav nav-tabs card-header-tabs">
-                                            <li class="nav-item">
-                                                <a class="nav-link active link-custom" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Iniciar sesión</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link link-custom" id="registro-tab" data-toggle="tab" href="#registro" role="tab" aria-controls="registro" aria-selected="false">Registrarse</a>
-                                            </li>
-                                        </ul>
+                                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item">
+                                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                                        </li>
+                                        <li class="nav-item">
+                                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                                        </li>
+                                      </ul>
                                     </div>
-                                    <div class="tab-content">
-                                      <div role="tabpanel" class="tab-pane active" id="login">
-                                        <!--Inicio del login-->
-                                        <div class="card-body">
-                                          <h5 class="card-title text-center">Iniciar sesión</h5>
-                                          <form class="form-signin">
-                                            <div class="form-label-group">
-                                              <input type="text" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
-                                              <label for="inputUsuario"></label>
-                                            </div>
-                              
-                                            <div class="form-label-group padding-b">
-                                              <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-                                              <label for="inputPassword"></label>
-                                            </div>
-                              
-                                            <div class="custom-control custom-checkbox mb-3 ">
-                                              <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                              <label class="custom-control-label" for="customCheck1">Recordar mi contraseña</label>
-                                            </div>
-                                            <button class="btn btn-lg btn-custom btn-block text-uppercase" type="submit">Iniciar sesión</button>
-                                            <hr class="my-4">
-                                            
-                                          </form>
-                                        </div>
-
-                                      </div>
-                                      <div role="tabpanel" class="tab-pane" id="registro">
-                                        <!--Inicio del Registro-->
-                                        <div class="card-body">
-                                          <h5 class="card-title text-center">Registrarse</h5>
-                                          <form class="form-signin">
-                                            <div class="form-row">
-                                              <div class="form-label-group col-md-4">
-                                                <input type="text" id="inputNombre" class="form-control" placeholder="Usuario" required autofocus>
-                                                <label for="inputNombre"></label>
-                                              </div>
-                                              <div class="form-label-group col-md-8">
-                                                <input type="email" id="inputEmail" class="form-control" placeholder="Correo electrónico" required autofocus>
-                                                <label for="inputEmail"></label>
-                                              </div>
-
-                                            </div>
-                                            
-                                            <div class="form-label-group">
-                                              <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-                                              <label for="inputPassword"></label>
-                                            </div>
-                              
-                                            <div class="form-label-group">
-                                              <input type="file" id="fotoFrenteDNI" class="form-control" placeholder="Foto Frente DNI" required>
-                                              <label class="custom-file-label" for="fotoFrenteDNI">Elegir foto del frente del DNI</label>
-                                              
-                                            </div>
-                                            <div class="form-label-group">
-                                              <input type="file" id="fotoAtrasDNI" class="form-control" placeholder="Foto Atras DNI" required>
-                                              <label class="custom-file-label" for="fotoAtrasDNI">Elegir foto de atras del DNI</label>
-                                              
-                                            </div>
-                                      
-                              
-                                            
-                                            <button class="btn btn-lg btn-custom btn-block text-uppercase" type="submit">Registrarse</button>
-                                            <hr class="my-4">
-                                            
-                                          </form>
-                                        </div>
-
-                                      </div>
+                                    <div class="tab-content" id="myTabContent">
+                                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">hola1</div>
+                                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">hola2</div>
+                                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">hola3</div>
                                     </div>
                                     
                                   </div>

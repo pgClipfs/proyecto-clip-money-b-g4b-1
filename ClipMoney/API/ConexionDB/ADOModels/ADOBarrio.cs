@@ -29,5 +29,17 @@ namespace ConexionDB.ADOModels
         {
             throw new NotImplementedException();
         }
+
+        public List<Barrio> ObtenerBarrios()
+        {
+            List<Barrio> barrios = new List<Barrio>();
+            string sql = $"SELECT * FROM BARRIOS;";
+            barrios = GestorBD.GetList<Barrio>(sql);
+          
+
+
+            return barrios;
+        }
+
     }
 }

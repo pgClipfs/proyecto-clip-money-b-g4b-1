@@ -162,6 +162,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\BarrioController.cs" />
     <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\OperacionController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />

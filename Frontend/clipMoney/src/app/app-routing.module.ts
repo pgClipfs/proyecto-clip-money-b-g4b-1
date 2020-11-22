@@ -7,8 +7,7 @@ import { SaldoUsuarioComponent } from './saldo-usuario/saldo-usuario.component';
 
 const routes: Routes = [
   {path:'',component:EstructuraloginComponent},
-  {path:'Inicio',component:SaldoUsuarioComponent},
-  {path:'**',component:SaldoUsuarioComponent}
+  {path:'Inicio',component:SaldoUsuarioComponent}
 ];
 
 @NgModule({

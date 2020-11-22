@@ -1,0 +1,81 @@
+
+    <!--Inicio del Registro-->
+    <div class="card-body">
+      <h5 class="card-title text-center">Registrarse</h5>
+      <form class="form-signin" id="formRegistro" #formRegistro="ngForm" (ngSubmit)="registerUser()">
+        <div class="form-row">
+          <div class="form-label-group col-md-4">
+            <input type="text" id="usuario" class="form-control" placeholder="Usuario" required autofocus [(ngModel)]="registroUsuario.usuario" name="usuario" #usuario="ngModel">
+            <label for="usuario"></label>
+          </div>
+          <div class="form-label-group col-md-8">
+            <input type="email" id="mail" class="form-control" placeholder="Correo electrónico"  [(ngModel)]="registroUsuario.mail" name="mail" #mail="ngModel">
+            <label for="mail"></label>
+          </div>
+
+        </div>
+        
+        <div class="form-label-group">
+          <input type="password" id="contrasenia" minlength="8" class="form-control" placeholder="Contraseña" required  [(ngModel)]="registroUsuario.contrasenia" name="contrasenia" #contrasenia="ngModel">
+          <label for="contrasenia"></label>
+        </div>
+
+        <div class="form-label-group">
+          <input type="file" id="fotoFrenteDNI" class="form-control" placeholder="Foto Frente DNI" required >
+          <label class="custom-file-label" for="fotoFrenteDNI">Elegir foto del frente del DNI</label>
+          
+        </div>
+        <div class="form-label-group">
+          <input type="file" id="fotoAtrasDNI" class="form-control" placeholder="Foto Atras DNI" required>
+          <label class="custom-file-label" for="fotoAtrasDNI">Elegir foto de atras del DNI</label>
+          
+        </div>
+        <div class="form-label-group ">
+          <input type="text" id="nombre_titular" class="form-control" placeholder="Nombre" required autofocus  [(ngModel)]="registroUsuario.nombre_titular" name="nombre_titular" #nombre_titular="ngModel">
+          <label for="nombre_titular"></label>
+        </div>
+        <div class="form-label-group 4">
+          <input type="text" id="apellido_titular" class="form-control" placeholder="Apellido" required autofocus  [(ngModel)]="registroUsuario.apellido_titular" name="apellido_titular" #apellido_titular="ngModel">
+          <label for="apellido_titular"></label>
+        </div>
+        <div class="form-label-group ">
+          <input type="text" id="telefono" class="form-control" placeholder="Teléfono"  [(ngModel)]="registroUsuario.telefono" name="telefono" #telefono="ngModel">
+          <label for="telefono"></label>
+        </div>
+        <div class="form-label-group ">
+          <input type="text" id="calle_direccion" class="form-control" placeholder="Calle" required autofocus  [(ngModel)]="registroUsuario.calle_direccion" name="calle_direccion" #calle_direccion="ngModel">
+          <label for="calle_direccion"></label>
+        </div>
+        <div class="form-label-group ">
+          <input type="text" id="numero_direccion" (keypress)="numberOnly($event)" class="form-control" placeholder="Número dirección" required autofocus  [(ngModel)]="registroUsuario.numero_direccion" name="numero_direccion" #numero_direccion="ngModel">
+          <label for="numero_direccion"></label>
+        </div>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Nacimiento</mat-label>
+          <input matInput [matDatepicker]="dp3" disabled required autofocus [(ngModel)]="registroUsuario.fecha_nacimiento" name="fecha_nacimiento" #fecha_nacimiento="ngModel">
+          <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+          <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+        
+
+
+        <div class="form-label-group ">
+          <input type="text" (keypress)="numberOnly($event)" id="DNI" class="form-control" placeholder="DNI" required autofocus  [(ngModel)]="registroUsuario.DNI" name="DNI" #DNI="ngModel">
+          <label for="DNI"></label>
+        </div>
+     
+        <mat-form-field appearance="fill">
+          <mat-label>Barrio</mat-label>
+          <mat-select  name="barrios" placeholder="Favorite food" [(ngModel)]="registroUsuario.barrio" required>
+            <mat-option *ngFor="let barrio of barrios" [value]="barrio">
+              {{barrio.barrio}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+        <button [disabled]="!formRegistro.valid" class="btn btn-lg btn-custom btn-block text-uppercase" type="submit">Registrarse</button>
+        <hr class="my-4">
+        
+      </form>
+    </div>
