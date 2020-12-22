@@ -58,6 +58,18 @@ namespace ConexionDB.ADOModels
 
             int cantidad = GestorBD.SaveData(sql, usuario);
             resultado = cantidad > 0 ? true : false;
+            if (resultado) {
+                var words = new[] { "apple", "mango", "papaya", "banana", "guava", "pineapple" };
+                words = words.OrderBy(i => Guid.NewGuid()).ToArray();
+
+                DateTime localDate = DateTime.Now;
+                Cuenta cuenta = new Cuenta(0,0,"Cuenta pesos CM",1,true, localDate, localDate, usuario.usuario,words[0]+"."+ words[3] + "."+words[1],0);
+                string sqlCuentas = @"INSERT INTO Cuentas (balance, descripcion, id_tipo_cuenta, estado, fecha_creacion, fecha_baja, usuario, alias, total_giro_descubierto)
+                                    OUTPUT Inserted.CVU
+                                    VALUES(@balance, @descripcion, @id_tipo_cuenta, @estado, @fecha_creacion, @fecha_baja, @usuario, @alias, @total_giro_descubierto)";
+                cantidad = GestorBD.SaveData(sqlCuentas, cuenta);
+                resultado = cantidad > 0 ? true : false;
+            }
 
             return resultado;
         }

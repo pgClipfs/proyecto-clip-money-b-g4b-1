@@ -66,9 +66,9 @@ namespace ConexionDB.DataAccess
                 {
                     cantidad = cnn.ExecuteScalar<int>(sql, data);
                 }
-                catch (Exception)
+                catch (Exception ex) 
                 {
-
+                    Console.WriteLine(ex.Message);
                    
                 }
                 return cantidad;

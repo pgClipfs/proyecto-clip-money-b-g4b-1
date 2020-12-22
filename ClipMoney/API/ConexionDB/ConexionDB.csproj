@@ -63,11 +63,13 @@
     <Compile Include="ADOModels\ADOServicio.cs" />
     <Compile Include="ADOModels\ADOServicioTipo.cs" />
     <Compile Include="ADOModels\ADOUsuario.cs" />
+    <Compile Include="ADOModels\ADOCuentaAmiga.cs" />
     <Compile Include="DataAccess\GestorBD.cs" />
     <Compile Include="DataAccess\ICRUD.cs" />
     <Compile Include="Helpers\Security.cs" />
     <Compile Include="Models\Barrio.cs" />
     <Compile Include="Models\Cuenta.cs" />
+    <Compile Include="Models\CuentaAmiga.cs" />
     <Compile Include="Models\CuentaTipo.cs" />
     <Compile Include="Models\Localidad.cs" />
     <Compile Include="Models\Moneda.cs" />

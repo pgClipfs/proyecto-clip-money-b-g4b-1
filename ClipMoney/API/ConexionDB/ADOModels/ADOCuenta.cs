@@ -30,10 +30,10 @@ namespace ConexionDB.ADOModels
             throw new NotImplementedException();
         }
 
-        public Cuenta ObtenerCuenta(int cvu)
+        public Cuenta ObtenerCuenta(string usuario)
         {
             Cuenta cta = new Cuenta();
-            string sql = $"SELECT * FROM CUENTAS WHERE CVU = '{cvu}';";
+            string sql = $"SELECT * FROM CUENTAS WHERE usuario = '{usuario}';";
             cta = GestorBD.GetObject<Cuenta>(sql);
             string sql2 = $"SELECT id_tipo_cuenta, nombre, descripcion FROM CUENTATIPO WHERE id_tipo_cuenta = '{cta.id_tipo_cuenta}';";
             cta.cuentaTipo = GestorBD.GetObject<CuentaTipo>(sql2);

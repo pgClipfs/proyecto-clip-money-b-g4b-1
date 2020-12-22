@@ -13,19 +13,16 @@ namespace WebAPI.Controllers
     {
         ADOCuenta dataAccess = new ADOCuenta();
 
-
-
         [HttpGet]
         // GET: api/Usuario/5
         [ActionName("ObtenerCuenta")]
-        public Cuenta ObtenerCuenta(int cvu)
+        public Cuenta ObtenerCuenta(string usuario)
         {
             Cuenta cta = new Cuenta();
-            cta = dataAccess.ObtenerCuenta(cvu);
+            cta = dataAccess.ObtenerCuenta(usuario);
             return cta;
         }
 
-      
         [HttpPost]
         [ActionName("NuevaCuenta")]
         public bool NuevaCuenta(Cuenta cuentaN)
@@ -36,7 +33,5 @@ namespace WebAPI.Controllers
             return resultado;
         }
       
-
-
     }
 }

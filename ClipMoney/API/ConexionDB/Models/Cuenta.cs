@@ -57,5 +57,25 @@ namespace ConexionDB.Models
         /// </summary>
         public double total_giro_descubierto { get; set; }
 
+
+        public Cuenta(int cvu, double balance, string descripcion, int id_tipo_cuenta,bool estado, 
+            DateTime fecha_creacion, DateTime fecha_baja, string usuario, string alias, double total_giro_descubierto)
+        {
+            this.CVU = cvu;
+            this.balance = balance;
+            this.descripcion = descripcion;
+            this.id_tipo_cuenta = id_tipo_cuenta;
+            this.estado = estado;
+            this.fecha_creacion = fecha_creacion;
+            this.fecha_baja = fecha_baja;
+            this.usuario = usuario;
+            this.alias = alias;
+            this.total_giro_descubierto = total_giro_descubierto;
+
+        }
+        public Cuenta()
+        {
+
+        }
     }
 }

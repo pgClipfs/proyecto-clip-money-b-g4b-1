@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { CuentaService } from '../cuenta.service';
+import { Cuenta } from '../models/cuenta';
 import { Usuario } from '../models/usuario';
 import { UsuarioService } from '../usuario.service';
 
@@ -14,6 +16,7 @@ export class IniciarsesComponent implements OnInit {
   user: Usuario = new Usuario();
 
   constructor(private usuarioService: UsuarioService,
+              private cuentaService: CuentaService,
               private router: Router,
               private _snackBar: MatSnackBar) { }
 
@@ -22,15 +25,23 @@ export class IniciarsesComponent implements OnInit {
 
   loginUser() {
     if (this.user.usuario != '') {
-      this.usuarioService.getUsuarioLogueado(this.user).subscribe(data => {
+      this.usuarioService.getUsuarioLogueado(this.user).subscribe((data: Usuario) => {
         if (data != null) {
+          this.cuentaService.getCuentaUsuario(data).subscribe((dataC: Cuenta) => {
+            if(dataC != null){
+              localStorage.setItem('usuario', JSON.stringify(dataC));
+              localStorage.setItem('pepito','pepito');
+              var obtenerMemoria = JSON.parse(localStorage.getItem('usuario'));
+              console.log(obtenerMemoria.balance);
+              //guardar usuario en memoria
+            }
+          })
           this.router.navigateByUrl('/Inicio');
         } else { 
           this.openSnackBar('Usuario inexistente, compruebe usuario y/o contraseña'); 
         }
       });
     }
-
   }
 
   openSnackBar(message: string) {
