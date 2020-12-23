@@ -1,4 +1,5 @@
 ﻿using ConexionDB.DataAccess;
+using ConexionDB.DTOModels;
 using ConexionDB.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConexionDB.ADOModels
 {
-    class ADOCuentaAmiga
+   public class ADOCuentaAmiga
     {
         public bool Eliminar(string filtro)
         {
@@ -30,9 +31,9 @@ namespace ConexionDB.ADOModels
             throw new NotImplementedException();
         }
 
-        public List<CuentaAmiga> ObtenerCuentasAmigas(int id_usuario)
+        public List<DTOCuentaAmiga> ObtenerCuentasAmigas(int id_usuario)
         {
-            List<CuentaAmiga> cas = new List<CuentaAmiga>();
+            List<DTOCuentaAmiga> cas = new List<DTOCuentaAmiga>();
             string sql = $"SELECT ca.CVU, u.nombre_titular, u.apellido_titular " +
                 $" FROM CuentasAmigas ca " +
                 $" JOIN Usuarios u " +
@@ -40,7 +41,7 @@ namespace ConexionDB.ADOModels
                 $" JOIN Cuentas c " +
                 $" ON ca.CVU = c.CVU " +
                 $" WHERE u.id_usuario = '{id_usuario}';";
-            cas = GestorBD.GetList<CuentaAmiga>(sql);
+            cas = GestorBD.GetList<DTOCuentaAmiga>(sql);
 
             return cas;
         }

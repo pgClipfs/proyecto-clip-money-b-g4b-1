@@ -66,6 +66,7 @@
     <Compile Include="ADOModels\ADOCuentaAmiga.cs" />
     <Compile Include="DataAccess\GestorBD.cs" />
     <Compile Include="DataAccess\ICRUD.cs" />
+    <Compile Include="DTOModels\DTOCuentaAmiga.cs" />
     <Compile Include="Helpers\Security.cs" />
     <Compile Include="Models\Barrio.cs" />
     <Compile Include="Models\Cuenta.cs" />
@@ -87,5 +88,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

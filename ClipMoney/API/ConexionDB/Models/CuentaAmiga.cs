@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConexionDB.Models
 {
-    class CuentaAmiga
+   public class CuentaAmiga
     {
         /// <summary>
         /// El id de la cuenta amiga
