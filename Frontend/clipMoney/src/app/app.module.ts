@@ -18,6 +18,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { MicuentaComponent } from './micuenta/micuenta.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MatInputModule } from '@angular/material/input';
     IniciarsesComponent,
     EstructuraloginComponent,
     SaldoUsuarioComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    MicuentaComponent
   ],
   imports: [
     BrowserModule,

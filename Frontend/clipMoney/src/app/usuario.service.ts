@@ -21,4 +21,8 @@ export class UsuarioService {
   guardarUsuario(usuarioG: Usuario){
     return this.http.post(this.endPoint+'GuardarUsuario',usuarioG);
   }
+
+  modificarUsuario(usuarioM: Usuario){
+    return this.http.post(this.endPoint+'ModificarUsuario',usuarioM);
+  }
 }

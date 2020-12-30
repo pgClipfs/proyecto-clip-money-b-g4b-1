@@ -22,6 +22,4 @@ export class CuentaService {
     params = params.set('id_usuario', id_usuario.toString());
     return this.http.get(this.endPoint+'CuentaAmiga/ObtenerListadoCuentasAmigas', {params});
   }
-
-
 }
