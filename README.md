@@ -1,10 +1,10 @@
-# 
 
-Clip Money Grupo 4B
+# CLIP MONEY
 
-## Introducción
-
+# GRUPO 4B
+```
 Se desarrolla un proyecto de Billetera Virtual para el Programa CLIP
+```
 
 ## Autores
 
