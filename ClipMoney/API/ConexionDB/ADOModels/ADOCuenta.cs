@@ -35,14 +35,35 @@ namespace ConexionDB.ADOModels
             Cuenta cta = new Cuenta();
             string sql = $"SELECT * FROM CUENTAS WHERE usuario = '{usuario}';";
             cta = GestorBD.GetObject<Cuenta>(sql);
-            string sql2 = $"SELECT id_tipo_cuenta, nombre, descripcion FROM CUENTATIPO WHERE id_tipo_cuenta = '{cta.id_tipo_cuenta}';";
+            string sql2 = $"SELECT * FROM CUENTATIPO WHERE id_tipo_cuenta = '{cta.id_tipo_cuenta}';";
             cta.cuentaTipo = GestorBD.GetObject<CuentaTipo>(sql2);
-            string sql3 = $"SELECT usuario, nombre_titular, apellido_titular FROM USUARIOS WHERE usuario = '{cta.usuario}';";
+            string sql3 = $"SELECT * FROM USUARIOS WHERE usuario = '{cta.usuario}';";
             cta.user = GestorBD.GetObject<Usuario>(sql3);
             return cta;
         }
 
-     
+        public Cuenta ObtenerCuentaFiltro(string filtro)
+        {
+            Cuenta cta = new Cuenta();
+            string sql = $"SELECT TOP 1 * FROM CUENTAS WHERE usuario = '{filtro}' OR alias = '{filtro}'";
+            int filtroCVU;
+            bool success = Int32.TryParse(filtro, out filtroCVU);
+            if (success)
+            {
+                sql += $"OR CVU = {filtroCVU}";
+            }
+            cta = GestorBD.GetObject<Cuenta>(sql);
+            if (cta != null)
+            {
+                string sql2 = $"SELECT * FROM CUENTATIPO WHERE id_tipo_cuenta = '{cta.id_tipo_cuenta}';";
+                cta.cuentaTipo = GestorBD.GetObject<CuentaTipo>(sql2);
+                string sql3 = $"SELECT * FROM USUARIOS WHERE usuario = '{cta.usuario}';";
+                cta.user = GestorBD.GetObject<Usuario>(sql3);
+            }
+            return cta;
+        }
+
+
         public bool NuevaCuenta(Cuenta cuenta)
         {
             bool resultado = false;

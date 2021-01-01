@@ -13,4 +13,5 @@ export class Usuario{
     numero_direccion:number;
     barrio:Barrio;
     id_barrio: number;
+    id_usuario: number;
 } 

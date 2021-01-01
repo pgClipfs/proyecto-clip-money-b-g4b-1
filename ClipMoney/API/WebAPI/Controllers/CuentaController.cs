@@ -23,6 +23,16 @@ namespace WebAPI.Controllers
             return cta;
         }
 
+        [HttpGet]
+        // GET: api/Usuario/5
+        [ActionName("ObtenerCuentaFiltro")]
+        public Cuenta ObtenerCuentaFiltro(string filtro)
+        {
+            Cuenta cta = new Cuenta();
+            cta = dataAccess.ObtenerCuentaFiltro(filtro);
+            return cta;
+        }
+
         [HttpPost]
         [ActionName("NuevaCuenta")]
         public bool NuevaCuenta(Cuenta cuentaN)

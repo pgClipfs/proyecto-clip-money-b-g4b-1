@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div class="profile-header-container">
+                <div class="profile-header-img">
+                    <img class="img-circle" src="../../assets/Imagenes/perfil-user.jpg" />
+                    <!-- badge -->
+                    <div class="rank-label-container">
+                        <span class="label label-default rank-label">Nombre Usuario</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Links -->
+        <ul class="list-unstyled components">
+            <li><a href="../MiCuenta/miCuenta.html">Mi Cuenta</a></li>
+            <li class="active">
+                <!-- Link with dropdown items -->
+                <a href="#homeSubmenu">Mi Saldo</a>
+            </li>
+
+            <li> <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Transferencias</a></li>
+            <ul class="collapse show list-unstyled" id="homeSubmenu">
+                <li><a href="../Transferencias/transferencias-cuentas.html">Transferir a cuenta</a></li>
+                <li><a href="../Transferencias/servicios.html">Servicios</a></li>
+            </ul>
+            <li><a href="../Inversiones/Inversiones.html">Inversiones</a></li>
+        </ul>
+
+        <img class="logo mb-2" src="../../assets/Imagenes/logo1-removebg.png" alt="logo">
+    </nav>
+
+    <!-- Page Content -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--Inicio del cuerpo de la pagina-->
+                <div fxFlex>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+</div>

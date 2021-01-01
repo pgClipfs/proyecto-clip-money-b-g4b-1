@@ -30,13 +30,10 @@ export class IniciarsesComponent implements OnInit {
           this.cuentaService.getCuentaUsuario(data).subscribe((dataC: Cuenta) => {
             if(dataC != null){
               localStorage.setItem('usuario', JSON.stringify(dataC));
-              localStorage.setItem('pepito','pepito');
-              var obtenerMemoria = JSON.parse(localStorage.getItem('usuario'));
-              console.log(obtenerMemoria.balance);
-              //guardar usuario en memoria
+              //var obtenerMemoria = JSON.parse(localStorage.getItem('usuario'));
             }
           })
-          this.router.navigateByUrl('/Inicio');
+          this.router.navigateByUrl('/Inicio/SaldoUsuario');
         } else { 
           this.openSnackBar('Usuario inexistente, compruebe usuario y/o contraseña'); 
         }

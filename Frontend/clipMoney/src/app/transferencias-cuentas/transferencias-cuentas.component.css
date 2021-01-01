@@ -1,0 +1,253 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+#content {
+  width: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+#sidebar {
+  background: #575757;
+  color: #fff;
+  transform-origin: center left; /* Set the transformed position of sidebar to center left side. */
+  height: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    to bottom,
+    #112632,
+    #112632,
+    #112632,
+    #112632,
+    #112632,
+    #15303e,
+    #193a4b,
+    #1c4558,
+    #235e76,
+    #287996,
+    #2c94b6,
+    #2eb1d6
+  );
+
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+  height: fit-content;
+  background: transparent;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+  color: #fff;
+}
+#sidebar ul li a:hover {
+  color: #112632;
+  background: #fff;
+  text-decoration: none;
+  width: 99%;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #575757 !important;
+  background: #fff;
+  width: 99%;
+}
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: transparent;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+#sidebarCollapse {
+  display: none;
+}
+
+.profile-header-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-header-img {
+  padding: 3rem;
+}
+
+.profile-header-img > img.img-circle {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #2eb1d6;
+  border-radius: 50%;
+}
+
+.profile-header {
+  margin-top: 43px;
+}
+
+/**
+  * Ranking component
+  */
+.rank-label-container {
+  margin-top: -19px;
+  /* z-index: 1000; */
+  text-align: center;
+}
+
+.label.label-default.rank-label {
+  background-color: #2eb1d6;
+  padding: 5px 10px 5px 10px;
+  border-radius: 27px;
+}
+
+.list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #112632 !important;
+  border-color: #112632 !important;
+}
+.btn-dark {
+  color: #fff;
+  background-color: #112632 !important;
+  border-color: #112632 !important;
+}
+
+#carouselServicios {
+  height: 30vh !important;
+  display: block;
+}
+#carouselServicios .carousel-item {
+  height: 30vh !important;
+  width: auto !important;
+}
+#carouselServicios .carousel-item .card img {
+  height: 20vh !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+.logo {
+  height: auto;
+  width: 250px;
+  position: absolute;
+  bottom: 0;
+}
+
+.container-fluid {
+  display: block !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+}
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: #112632;
+  top: 5rem !important;
+}
+
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: #112632;
+  top: 5rem !important;
+}
+.carousel-indicators .active {
+  background-color: #112632;
+}
+.carousel-indicators li {
+  background-color: #859096;
+}
+.carousel-indicators {
+  top: 10rem !important;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  top: 6.2rem !important;
+}
+.card-img-top {
+  height: 9vh !important;
+  object-fit: cover !important;
+}
+@media (max-width: 640px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #sidebarCollapse {
+    display: block;
+  }
+  .logo {
+    position: relative;
+  }
+
+  .carousel-control-next-icon:after {
+    top: 2rem !important;
+  }
+
+  .carousel-control-prev-icon:after {
+    top: 2rem !important;
+  }
+}
+
+.btnTransferir{
+  width: 30%;
+  height: 2rem;
+  cursor: pointer;
+}

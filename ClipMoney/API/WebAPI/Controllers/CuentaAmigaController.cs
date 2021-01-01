@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ConexionDB.ADOModels;
+using ConexionDB.Models;
 
 namespace WebAPI.Controllers
 {
@@ -22,6 +23,15 @@ namespace WebAPI.Controllers
             List<DTOCuentaAmiga> dtoCA = new List<DTOCuentaAmiga>();
             dtoCA = dataAccess.ObtenerCuentasAmigas(id_usuario);
             return dtoCA;
+        }
+
+        [HttpPost]
+        [ActionName("AgregarCuentaAmiga")]
+
+        public bool AgregarCuentaAmiga(CuentaAmiga cuentaAmiga) {
+            bool resultado = true;
+            resultado = dataAccess.AgregarCuentaAmiga(cuentaAmiga);
+            return resultado;
         }
 
 

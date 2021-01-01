@@ -14,3 +14,4 @@ export class Cuenta{
         alias:string;
         total_giro_descubierto:number;
 }
+

@@ -18,6 +18,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { TransferenciasCuentasComponent } from './transferencias-cuentas/transferencias-cuentas.component';
+import { AgregarCuentaAmigaComponent } from './transferencias-cuentas/modales/agregar-cuenta-amiga/agregar-cuenta-amiga.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -26,7 +31,10 @@ import { MatInputModule } from '@angular/material/input';
     IniciarsesComponent,
     EstructuraloginComponent,
     SaldoUsuarioComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    NavbarComponent,
+    TransferenciasCuentasComponent,
+    AgregarCuentaAmigaComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,12 @@ import { MatInputModule } from '@angular/material/input';
     MatSnackBarModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatIconModule
+  ],
+  entryComponents: [
+    AgregarCuentaAmigaComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

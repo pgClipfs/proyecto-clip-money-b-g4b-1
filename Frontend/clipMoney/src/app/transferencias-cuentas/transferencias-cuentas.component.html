@@ -1,0 +1,97 @@
+<div>
+  <div class="page-header">
+    <h1 class="header-transferencia">
+      Transferencia a cuenta
+    </h1>
+  </div>
+  <div class="container-fluid">
+    <div class="list-group">
+      <p class="list-group-item list-group-item-action active">Todas las cuentas</p>
+      <div *ngFor="let item of listadoCuentasAmigas" class="list-group-item">
+        <div class="row">
+          <div class="col">
+            <span style="text-transform: capitalize;">
+              {{item.nombre_titular +" "+ item.apellido_titular}}
+            </span>
+          </div>
+          <div class="col text-right">
+            <span class="badge badge-info badge-pill btnTransferir" data-toggle="modal" data-target="#modal-transferir"
+             > Realizar transferencia <img src="../../assets/Imagenes/marca-de-verificacion.png"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" (click)="openDialogAgregarCuenta()"
+      class="btn btn-dark mt-3 btn-lg btn-block">AGREGAR CUENTA NUEVA</button>
+
+    <!-- FIN CUERPO PÁGINA -->
+
+    <!-- COMIENZO MODALES -->
+
+    <!-- Modal Agregar Cuenta -->
+    <div class="modal fade" id="modal-agregarcuenta" tabindex="-1" role="dialog" aria-labelledby="modal-agregarcuenta"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-agregarcuenta">Agregar Cuenta</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput">CBU/CVU</label>
+                <input type="text" class="form-control" id="formGroupExampleInput">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Alias</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2">
+              </div>
+              <small id="passwordHelpBlock" class="form-text text-muted" style="color: #adadad">
+                Ingrese el CBU/CVU o el alias de la cuenta que desea agregar.
+              </small>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-info">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN Modal Agregar Cuenta -->
+
+    <!-- Modal Transferir -->
+    <div class="modal fade" id="modal-transferir" tabindex="-1" role="dialog" aria-labelledby="modal-transferir"
+      aria-hidden="true">
+      <!-- Comienzo del cuerpo del modal transferir -->
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Transferir</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <p style="text-align: center;">User Usuario</p>
+                <p style="text-align: center;">Tu saldo es: (moneda+saldo)</p>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="$0" required>
+              </div>
+            </form>
+            <!-- FIN Modal Transferir -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-info">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

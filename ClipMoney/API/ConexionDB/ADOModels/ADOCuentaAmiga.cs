@@ -36,11 +36,11 @@ namespace ConexionDB.ADOModels
             List<DTOCuentaAmiga> cas = new List<DTOCuentaAmiga>();
             string sql = $"SELECT ca.CVU, u.nombre_titular, u.apellido_titular " +
                 $" FROM CuentasAmigas ca " +
-                $" JOIN Usuarios u " +
-                $" ON ca.id_usuario = u.id_usuario " +
                 $" JOIN Cuentas c " +
-                $" ON ca.CVU = c.CVU " +
-                $" WHERE u.id_usuario = '{id_usuario}';";
+                $"  ON c.CVU = ca.CVU " +
+                $" JOIN Usuarios u " +
+                $" ON u.usuario = c.usuario " +
+                $" WHERE ca.id_usuario = '{id_usuario}';";
             cas = GestorBD.GetList<DTOCuentaAmiga>(sql);
 
             return cas;
@@ -53,6 +53,28 @@ namespace ConexionDB.ADOModels
             ca = GestorBD.GetObject<CuentaAmiga>(sql);
             
             return ca;
+        }
+
+        public bool AgregarCuentaAmiga(CuentaAmiga cuentaAmiga) {
+            bool resultado = true;
+
+            try
+            {
+                string sql = @"INSERT INTO CuentasAmigas (id_usuario,CVU,fecha_ultima_transaccion)
+                        OUTPUT Inserted.id_cuenta_amiga
+                        VALUES(@id_usuario,@CVU,@fecha_ultima_transaccion);";
+
+                int cantidad = GestorBD.SaveData(sql, cuentaAmiga);
+                resultado = cantidad > 0 ? true : false;
+            }
+            catch (Exception ex)
+            {
+
+                resultado = false;
+            }
+
+            return resultado;
+        
         }
 
     }

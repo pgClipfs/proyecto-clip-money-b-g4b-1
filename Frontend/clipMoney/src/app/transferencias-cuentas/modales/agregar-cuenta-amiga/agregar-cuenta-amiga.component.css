@@ -1,0 +1,15 @@
+.btnModalActions{
+    width: 7rem;
+    border-radius: 0.6rem;
+    background-color: mediumvioletred;
+    height: 2rem;
+    border: none;
+}
+
+#aceptar{
+    background-color: mediumpurple !important;
+}
+
+.btnModalActions:hover {
+    border: 2px solid whitesmoke;
+}

@@ -1,0 +1,19 @@
+
+
+<div class="container- fluid">
+    <h1 mat-dialog-title>Agregar Cuenta</h1>
+    <div mat-dialog-content>
+      <p>Ingrese los datos</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Ingresa CVU, Alias ó Usuario</mat-label>
+        <input matInput [(ngModel)]="filtroCuenta" (ngModelChange)=" usuarioEncontrado = false">
+        <button style="border: none; background: transparent;" [disabled]="!filtroCuenta || usuarioEncontrado" mat-icon-button matSuffix (click)="buscarCuenta()" >
+        <mat-icon>{{usuarioEncontrado ? 'check_circle_outline' : 'search'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions style="justify-content: flex-end;">
+      <button class="m-1 btnModalActions" (click)="onNoClick()">No Thanks</button>
+      <button class="m-1 btnModalActions" id="aceptar" (click)="guardarCuentaAmiga()" mat-button  cdkFocusInitial>Ok</button>
+    </div>
+</div>
