@@ -23,6 +23,7 @@ import { TransferenciasCuentasComponent } from './transferencias-cuentas/transfe
 import { AgregarCuentaAmigaComponent } from './transferencias-cuentas/modales/agregar-cuenta-amiga/agregar-cuenta-amiga.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
+import { MicuentaComponent } from './micuenta/micuenta.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {MatIconModule} from '@angular/material/icon';
     RegistroUsuarioComponent,
     NavbarComponent,
     TransferenciasCuentasComponent,
-    AgregarCuentaAmigaComponent
+    AgregarCuentaAmigaComponent,
+    MicuentaComponent
   ],
   imports: [
     BrowserModule,

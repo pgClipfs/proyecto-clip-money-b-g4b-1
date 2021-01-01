@@ -29,6 +29,8 @@ export class IniciarsesComponent implements OnInit {
         if (data != null) {
           this.cuentaService.getCuentaUsuario(data).subscribe((dataC: Cuenta) => {
             if(dataC != null){
+              dataC.usuario = data;
+              dataC.user = data.usuario;
               localStorage.setItem('usuario', JSON.stringify(dataC));
               //var obtenerMemoria = JSON.parse(localStorage.getItem('usuario'));
             }
