@@ -6,7 +6,6 @@ import { CuentaService } from 'src/app/cuenta.service';
 import { Cuenta } from 'src/app/models/cuenta';
 import { CuentaAmiga } from 'src/app/models/cuentaAmiga';
 import { OperacionesService } from 'src/app/operaciones.service';
-import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-realizar-transferencia',
@@ -25,15 +24,15 @@ export class RealizarTransferenciaComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.cuentaLogueada = data.cuentaLogueada;
     this.cuentaDestino = data.cuentaDestino;
-    this.montoTranferenciaControl = new FormControl('', [Validators.required, this.verificarMontoTransferencia(this.cuentaLogueada.balance)]);
+    this.montoTranferenciaControl = new FormControl('', [Validators.required, this.verificarMontoTransferencia(this.cuentaLogueada.balance+this.cuentaLogueada.total_giro_descubierto)]);
   }
 
   ngOnInit(): void {
   }
 
-  verificarMontoTransferencia(balance:number): ValidatorFn{
+  verificarMontoTransferencia(saldoMaximo:number): ValidatorFn{
     return( control: AbstractControl): ValidationErrors => {
-      return control.value <= 0 ? { 'errorNulo': true } : control.value > balance ? { 'montoMayor': true } : null;
+      return control.value <= 0 ? { 'errorNulo': true } : control.value > saldoMaximo ? { 'montoMayor': true } : null;
     };
   }
 
@@ -42,7 +41,7 @@ export class RealizarTransferenciaComponent implements OnInit {
       return 'El valor ingresado debe ser mayor a 0';
     }
 
-    return this.montoTranferenciaControl.hasError('montoMayor') ? 'El monto a tranferir no puede superar al balance de la cuenta' : '';
+    return this.montoTranferenciaControl.hasError('montoMayor') ? 'El monto a tranferir no puede superar el giro al descubierto asignado a la cuenta' : '';
   }
 
   onNoClick(): void {
@@ -55,12 +54,19 @@ export class RealizarTransferenciaComponent implements OnInit {
         cuentaOrigen: this.cuentaLogueada.CVU,
         balanceOrigen:this.cuentaLogueada.balance,
         cuentaDestino: this.cuentaDestino.cvu,
-        montoTransferencia: this.montoTranferenciaControl.value
+        montoTransferencia: this.montoTranferenciaControl.value,
+        totalGiro: this.cuentaLogueada.total_giro_descubierto
       }
       this.operacionesService.realizarTransferencia(transferencia).subscribe(data =>
         {
           if(data){
-            this.cuentaLogueada.balance -= this.montoTranferenciaControl.value;
+            if(transferencia.balanceOrigen > transferencia.montoTransferencia){
+              this.cuentaLogueada.balance -= transferencia.montoTransferencia;
+            }else{
+              this.cuentaLogueada.balance = 0;
+              this.cuentaLogueada.total_giro_descubierto = transferencia.totalGiro - (transferencia.montoTransferencia - transferencia.balanceOrigen);
+            }
+
             localStorage.setItem('usuario', JSON.stringify(this.cuentaLogueada));
             this.openSnackBar("Transferencia realizada con exito");
             this.onNoClick();

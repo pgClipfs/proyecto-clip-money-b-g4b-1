@@ -25,6 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import { MicuentaComponent } from './micuenta/micuenta.component';
 import { RealizarTransferenciaComponent } from './transferencias-cuentas/modales/realizar-transferencia/realizar-transferencia.component';
+import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { RealizarTransferenciaComponent } from './transferencias-cuentas/modales
     MatInputModule,
     MatDialogModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    RouterTestingModule 
   ],
   entryComponents: [
     AgregarCuentaAmigaComponent

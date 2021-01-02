@@ -42,20 +42,23 @@ namespace ConexionDB.ADOModels
             return opc;
         }
 
-        public Operacion ObtenerOperaciones(int CVU_cuenta)
+        public List<Operacion> ObtenerOperaciones(int CVU_cuenta)
         {
-            Operacion opc = new Operacion();
+            List<Operacion> listOperaciones = new List<Operacion>();
             string sql = $"SELECT * FROM OPERACIONES WHERE CVU_cuenta = '{CVU_cuenta}';";
-            opc = GestorBD.GetObject<Operacion>(sql);
-            string sql2 = $"SELECT id_tipo_operacion, descripcion, nombre FROM OPERACIONESTIPO WHERE id_tipo_operacion = '{opc.id_tipo_operacion}';";
-            opc.operacionTipo = GestorBD.GetObject<OperacionTipo>(sql2);
-            string sql3 = $"SELECT id_moneda, nombre FROM MONEDAS WHERE id_moneda = '{opc.id_moneda}';";
-            opc.moneda = GestorBD.GetObject<Moneda>(sql3);
-            return opc;
+            listOperaciones = GestorBD.GetList<Operacion>(sql);
+            foreach (var opc in listOperaciones)
+            {
+                string sql2 = $"SELECT * FROM OPERACIONESTIPO WHERE id_tipo_operacion = '{opc.id_tipo_operacion}';";
+                opc.operacionTipo = GestorBD.GetObject<OperacionTipo>(sql2);
+                string sql3 = $"SELECT * FROM MONEDAS WHERE id_moneda = '{opc.id_moneda}';";
+                opc.moneda = GestorBD.GetObject<Moneda>(sql3);
+            }
+            return listOperaciones;
         }
 
       
-        public bool NuevaOperacion(Operacion operacion, double balanceOrigen)
+        public bool NuevaOperacion(Operacion operacion, double balanceOrigen,double totalGiro)
         {
             bool resultado = false;
             string sql = @"INSERT INTO OPERACIONES ( CVU_cuenta, CVU_cuenta_destino, CVU_cuenta_origen, verificacion_banco, descripcion, fecha_ocurrencia, monto_original, monto, id_tipo_operacion, verificacion_origen_destino, id_moneda)
@@ -65,8 +68,20 @@ namespace ConexionDB.ADOModels
             int cantidad = GestorBD.SaveData(sql, operacion);
             if(cantidad > 0)
             {
-                string sqlUpdate = $"UPDATE Cuentas SET balance = {balanceOrigen-operacion.monto} WHERE CVU = {operacion.CVU_cuenta_Origen}";
+                double balanceNuevo = 0;
+                bool deuda = false;
+                string updateBalance = "";
+                if (balanceOrigen > operacion.monto) {
+                    updateBalance = Convert.ToString(balanceOrigen - operacion.monto);
+                }
+                else
+                {
+                    updateBalance = $"0 , total_giro_descubierto = {totalGiro - (operacion.monto - balanceOrigen)}, deuda_banco = {operacion.monto - balanceOrigen}";
+                }
+                
+                string sqlUpdate = $"UPDATE Cuentas SET balance = {updateBalance } WHERE CVU = {operacion.CVU_cuenta_Origen}";
                 GestorBD.SaveData(sqlUpdate, operacion);
+
 
                 string sqlUpdateDest = $"  UPDATE Cuentas SET balance = (SELECT balance + {operacion.monto} FROM Cuentas WHERE CVU = {operacion.CVU_cuenta_destino}) WHERE CVU = {operacion.CVU_cuenta_destino}";
                 GestorBD.SaveData(sqlUpdateDest, operacion);

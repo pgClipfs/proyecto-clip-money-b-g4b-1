@@ -26,9 +26,9 @@ namespace WebAPI.Controllers
         [HttpGet]
         // GET: api/Usuario/5
         [ActionName("ObtenerOperaciones")]
-        public Operacion ObtenerOperaciones(int CVU_cuenta)
+        public List<Operacion> ObtenerOperaciones(int CVU_cuenta)
         {
-            Operacion opc = new Operacion();
+            List<Operacion> opc = new List<Operacion>();
             opc = dataAccess.ObtenerOperaciones(CVU_cuenta);
             return opc;
         }
@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         // GET: api/Usuario/5
         [ActionName("RealizarTransferencia")]
-        public bool RealizarTransferencia(int cuentaOrigen, double balanceOrigen, int cuentaDestino, double montoTransferencia)
+        public bool RealizarTransferencia(int cuentaOrigen, double balanceOrigen, int cuentaDestino, double montoTransferencia, double totalGiro)
         {
             bool resultado = false;
             Operacion opc = new Operacion();
@@ -51,7 +51,7 @@ namespace WebAPI.Controllers
             opc.id_tipo_operacion = 1;
             opc.verificacion_origen_destino = true;
             opc.id_moneda = 1;
-            resultado = dataAccess.NuevaOperacion(opc, balanceOrigen);
+            resultado = dataAccess.NuevaOperacion(opc, balanceOrigen, totalGiro);
             return resultado;
         }
         

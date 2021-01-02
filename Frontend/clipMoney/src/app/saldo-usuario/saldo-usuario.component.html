@@ -1,66 +1,39 @@
 <div>
     <div class="page-header">
         <h1 class="header-micuenta">
-            Mi Saldo: $
+            Mi Saldo: ${{usuarioLogueado.balance}}
         </h1>
     </div>
     <div class="row">
-        <div class="col-md-6 col-sm-11 ">
+        <div class="container-fluid">
             <div class="list-group">
                 <p class="list-group-item list-group-item-action active">Movimientos recientes
                 </p>
                 <div class="list-group-item">
-                    Tipo de Transacción
+                    <div class="row">
+                        <div class="col">Fecha</div>
+                        <div class="col">Monto</div>
+                        <div class="col">CVU Cuenta Destino</div>
+                        <div class="col">Descripcion</div>
+                        <div class="col">Moneda</div>
+                        <div class="col">Tipo Transacción</div>
+                    </div>
                 </div>
-                <div class="list-group-item">
-                    Tipo de Transacción
+                <div *ngFor="let operacion of operaciones" class="list-group-item">
+                    <div class="row">
+                        <div class="col">{{operacion.fecha_ocurrencia | date:'d/M/yy, h:mm a'}}</div>
+                        <div class="col">{{operacion.monto}}</div>
+                        <div class="col">{{operacion.CVU_cuenta_destino}}</div>
+                        <div class="col">{{operacion.descripcion}}</div>
+                        <div class="col">{{operacion.moneda.nombre}}</div>
+                        <div class="col">{{operacion.operacionTipo.nombre}}</div>
+                    </div>
                 </div>
-                <div class="list-group-item">
-                    Tipo de Transacción
-                </div>
-                <div class="list-group-item">
-                    Tipo de Transacción
-                </div>
-                <div class="list-group-item">
-                    Tipo de Transacción
-                </div>
-                <div class="list-group-item">
-                    Tipo de Transacción
-                </div>
-                <div class="list-group-item">
-                    Tipo de Transacción
-                </div>
+                
             </div>
         </div>
 
-        <div class="col-md-6 col-sm-12">
-            <div class="list-group">
-                <p class="list-group-item list-group-item-action active">Monto de la Transacción
-                </p>
-                <div class="list-group-item">
-                    Monto (+/-)
-                </div>
-                <div class="list-group-item">
-                    Monto (+/-)
-                </div>
-                <div class="list-group-item">
-                    Monto (+/-)
-                </div>
-                <div class="list-group-item">
-                    Monto (+/-)
-                </div>
-                <div class="list-group-item">
-                    Monto (+/-)
-                </div>
-                <div class="list-group-item">
-                    Monto (+/-)
-                </div>
-                <div class="list-group-item">
-                    Monto (+/-)
-                </div>
-            </div>
-            <br>
-        </div>
+        
         <button type="button" data-toggle="modal" data-target="#modal-recargarsaldo"
             class="btn btn-dark m-3 btn-lg btn-block">RECARGAR SALDO</button>
         <button type="button" data-toggle="modal" data-target="#modal-retirarsaldo"

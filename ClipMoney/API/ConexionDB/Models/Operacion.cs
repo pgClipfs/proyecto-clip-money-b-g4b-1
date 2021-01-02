@@ -55,7 +55,7 @@ namespace ConexionDB.Models
         /// <summary>
         /// Es el monto de la Operacion
         /// </summary>
-        public double? monto { get; set; }
+        public double monto { get; set; }
         /// <summary>
         /// Es el objeto Operacion Tipo asociada a la Operacion
         /// </summary>
