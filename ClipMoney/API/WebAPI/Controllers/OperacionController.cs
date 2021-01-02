@@ -33,13 +33,36 @@ namespace WebAPI.Controllers
             return opc;
         }
 
+        [HttpGet]
+        // GET: api/Usuario/5
+        [ActionName("RealizarTransferencia")]
+        public bool RealizarTransferencia(int cuentaOrigen, double balanceOrigen, int cuentaDestino, double montoTransferencia)
+        {
+            bool resultado = false;
+            Operacion opc = new Operacion();
+            opc.CVU_cuenta_destino = cuentaDestino;
+            opc.CVU_cuenta_Origen = cuentaOrigen;
+            opc.CVU_cuenta = cuentaOrigen;
+            opc.verificacion_banco = true;
+            opc.descripcion = "Transferencia pesos";
+            opc.fecha_ocurrencia = DateTime.Now;
+            opc.monto_original = montoTransferencia;
+            opc.monto = montoTransferencia;
+            opc.id_tipo_operacion = 1;
+            opc.verificacion_origen_destino = true;
+            opc.id_moneda = 1;
+            resultado = dataAccess.NuevaOperacion(opc, balanceOrigen);
+            return resultado;
+        }
+        
+
         [HttpPost]
         [ActionName("NuevaOperacion")]
         public bool NuevaOperacion(Operacion operacionN)
         {
             bool resultado = false;
 
-            resultado = dataAccess.NuevaOperacion(operacionN);
+            //resultado = dataAccess.NuevaOperacion(operacionN);
             return resultado;
         }
 

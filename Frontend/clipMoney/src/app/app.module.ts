@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { IniciarsesComponent } from './iniciarses/iniciarses.component';
 import { EstructuraloginComponent } from './estructuralogin/estructuralogin.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SaldoUsuarioComponent } from './saldo-usuario/saldo-usuario.component';
 import { RegistroUsuarioComponent } from './registro-usuario/registro-usuario.component';
@@ -24,6 +24,7 @@ import { AgregarCuentaAmigaComponent } from './transferencias-cuentas/modales/ag
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import { MicuentaComponent } from './micuenta/micuenta.component';
+import { RealizarTransferenciaComponent } from './transferencias-cuentas/modales/realizar-transferencia/realizar-transferencia.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MicuentaComponent } from './micuenta/micuenta.component';
     NavbarComponent,
     TransferenciasCuentasComponent,
     AgregarCuentaAmigaComponent,
-    MicuentaComponent
+    MicuentaComponent,
+    RealizarTransferenciaComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { MicuentaComponent } from './micuenta/micuenta.component';
     MatNativeDateModule,
     MatInputModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     AgregarCuentaAmigaComponent

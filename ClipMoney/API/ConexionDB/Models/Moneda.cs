@@ -19,7 +19,7 @@ namespace ConexionDB.Models
         /// <summary>
         /// Es la abreviacion de Moneda
         /// </summary>
-        public string abreviacion { get; set; }
+        public string abreviación { get; set; }
        /// <summary>
        /// Es la descripcion de Moneda
        /// </summary>

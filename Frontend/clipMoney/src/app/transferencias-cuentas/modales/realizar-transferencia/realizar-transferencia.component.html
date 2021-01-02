@@ -1,0 +1,26 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Transferir</h5>
+        <button type="button" (click)="onNoClick()" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <p style="text-align: center;">{{cuentaLogueada.usuario.usuario}}</p>
+            <p style="text-align: center;">Tu saldo es: {{"$"+cuentaLogueada.balance}}</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Ingresa el monto</mat-label>
+                <input matInput [formControl]="montoTranferenciaControl" required>
+                <mat-icon matSuffix>attach_money</mat-icon>
+                <mat-error *ngIf="montoTranferenciaControl.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- FIN Modal Transferir -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" (click)="onNoClick()" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" (click)="realizarTransferencia()" class="btn btn-info">Guardar</button>
+    </div>
+</div>

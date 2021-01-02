@@ -55,14 +55,24 @@ namespace ConexionDB.ADOModels
         }
 
       
-        public bool NuevaOperacion(Operacion operacion)
+        public bool NuevaOperacion(Operacion operacion, double balanceOrigen)
         {
             bool resultado = false;
-            string sql = @"INSERT INTO OPERACIONES (id_operacion, CVU_cuenta, CVU_cuenta_destino, CVU_cuenta_origen, verificacion_banco, descripcion, fecha_ocurrencia, monto_original, monto, id_tipo_operacion, verificacion_origen_destino, id_moneda)
-                        VALUES(@id_operacion, @CVU_cuenta, @CVU_cuenta_destino, @CVU_cuenta_origen, @verificacion_banco, @descripcion, @fecha_ocurrencia, @monto_original, @monto, @id_tipo_operacion, @verificacion_origen_destino, @id_moneda);";
+            string sql = @"INSERT INTO OPERACIONES ( CVU_cuenta, CVU_cuenta_destino, CVU_cuenta_origen, verificacion_banco, descripcion, fecha_ocurrencia, monto_original, monto, id_tipo_operacion, verificacion_origen_destino, id_moneda)
+                        OUTPUT Inserted.id_operacion
+                        VALUES(@CVU_cuenta, @CVU_cuenta_destino, @CVU_cuenta_origen, @verificacion_banco, @descripcion, @fecha_ocurrencia, @monto_original, @monto, @id_tipo_operacion, @verificacion_origen_destino, @id_moneda);";
 
             int cantidad = GestorBD.SaveData(sql, operacion);
-            resultado = cantidad > 0 ? true : false;
+            if(cantidad > 0)
+            {
+                string sqlUpdate = $"UPDATE Cuentas SET balance = {balanceOrigen-operacion.monto} WHERE CVU = {operacion.CVU_cuenta_Origen}";
+                GestorBD.SaveData(sqlUpdate, operacion);
+
+                string sqlUpdateDest = $"  UPDATE Cuentas SET balance = (SELECT balance + {operacion.monto} FROM Cuentas WHERE CVU = {operacion.CVU_cuenta_destino}) WHERE CVU = {operacion.CVU_cuenta_destino}";
+                GestorBD.SaveData(sqlUpdateDest, operacion);
+                resultado = true;
+            }
+            
 
             return resultado;
         }

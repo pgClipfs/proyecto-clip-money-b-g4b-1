@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EstructuraloginComponent } from './estructuralogin/estructuralogin.component';
+import { LoginGuardService } from './guards/login-guard.service';
 import { IniciarsesComponent } from './iniciarses/iniciarses.component';
 import { MicuentaComponent } from './micuenta/micuenta.component';
 import { SaldoUsuarioComponent } from './saldo-usuario/saldo-usuario.component';
@@ -11,7 +12,7 @@ import { TransferenciasCuentasComponent } from './transferencias-cuentas/transfe
 const routes: Routes = [
   { path: '', component: EstructuraloginComponent },
   {
-    path: 'Inicio', component: NavbarComponent, children: [
+    path: 'Inicio', component: NavbarComponent,canActivate: [LoginGuardService], children: [
       { path: 'SaldoUsuario', component: SaldoUsuarioComponent },
       { path: 'TransferenciasCuentas', component: TransferenciasCuentasComponent },
       { path: 'MiCuenta', component: MicuentaComponent }

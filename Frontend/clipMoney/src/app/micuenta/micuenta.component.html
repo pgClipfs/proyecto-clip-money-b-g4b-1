@@ -1,194 +1,124 @@
-<div class="wrapper">
-
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <div class="profile-header-container">
-                <div class="profile-header-img">
-                    <img class="img-circle" src="../../assets/Imagenes/perfil-user.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">{{cuenta.user}}</span>
-                    </div>
+<div>
+    <div class="page-header">
+        <h1 class="header-micuenta">
+            Mi Cuenta
+        </h1>
+    </div>
+    <div class="row">
+        <div class=" col-sm-12 ">
+            <div class="list-group">
+                <p class="list-group-item list-group-item-action active">Información de la cuenta
+                </p>
+                <div class="list-group-item">
+                    CVU: {{cuenta.CVU}}
                 </div>
+                <div class="list-group-item">
+                    Alias: {{cuenta.alias}}
+                </div>
+                <div class="list-group-item">
+                    Nombre del Titular: {{cuenta.usuario.nombre_titular}}
+                    {{cuenta.usuario.apellido_titular}}
+                </div>
+                <div class="list-group-item">
+                    Correo Electrónico: {{cuenta.usuario.mail}} <span class="badge-info badge-pill float-right"
+                        (click)="open(correoElectronico)" style="cursor: pointer;">modificar
+                        <img src="../../assets/Imagenes/marca-de-verificacion.png"></span>
+                </div>
+            </div>
+            <div class="list-group-item">
+                Fecha de nacimiento: {{cuenta.usuario.fecha_nacimiento | date : 'shortDate'}}
+            </div>
+            <div class="list-group-item">
+                DNI: {{cuenta.usuario.DNI}}
+            </div>
+            <div class="list-group-item">
+                Número de Teléfono: {{cuenta.usuario.telefono}} <span class="badge-info badge-pill float-right"
+                    (click)="open(numeroTelefono)" style="cursor: pointer;">
+                    modificar
+                    <img src="../../assets/Imagenes/marca-de-verificacion.png"></span>
+            </div>
+
+            <div class="list-group-item">
+                Dirección: {{cuenta.usuario.calle_direccion}} {{cuenta.usuario.numero_direccion}}
+                <span class="badge-info badge-pill float-right" data-toggle="modal" (click)="open(domicilio)"
+                    style="cursor: pointer;">
+                    modificar
+                    <img src="../../assets/Imagenes/marca-de-verificacion.png"></span>
             </div>
         </div>
+    </div>
 
-        <!-- Sidebar Links -->
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Mi Cuenta</a>
+    <br>
 
-
-            <li><a routerLink="/Inicio">Mi Saldo</a></li>
-
-            <li><a href="#">Transferencias</a></li>
-            <li><a href="#">Inversiones</a></li>
-        </ul>
-
-        <img class="logo mb-2" src="../../assets/Imagenes/logo1-removebg.png" alt="logo">
-    </nav>
-
-    <!-- Page Content -->
-    <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="row">
-                    <div class="col-md-12 ">
-                        <div class="page-header">
-                            <h1 class="header-micuenta">
-                                Mi Cuenta
-                            </h1>
-                        </div>
-                        <div class="row">
-                            <div class=" col-sm-12 ">
-                                <div class="list-group">
-                                    <p class="list-group-item list-group-item-action active">Información de la cuenta
-                                    </p>
-                                    <div class="list-group-item">
-                                        CVU: {{cuenta.CVU}}
-                                    </div>
-                                    <div class="list-group-item">
-                                        Alias: {{cuenta.alias}}
-                                    </div>
-                                    <div class="list-group-item">
-                                        Nombre del Titular: {{cuenta.usuario.nombre_titular}}
-                                        {{cuenta.usuario.apellido_titular}}
-                                    </div>
-                                    <div class="list-group-item">
-                                        Correo Electrónico: {{cuenta.usuario.mail}} <span
-                                            class="badge-info badge-pill float-right" (click)="open(correoElectronico)"
-                                            style="cursor: pointer;">modificar
-                                            <img src="../../assets/Imagenes/marca-de-verificacion.png"></span>
-                                    </div>
-                                </div>
-                                <div class="list-group-item">
-                                    Fecha de nacimiento: {{cuenta.usuario.fecha_nacimiento | date : 'shortDate'}}
-                                </div>
-                                <div class="list-group-item">
-                                    DNI: {{cuenta.usuario.DNI}}
-                                </div>
-                                <div class="list-group-item">
-                                    Número de Teléfono: {{cuenta.usuario.telefono}} <span
-                                        class="badge-info badge-pill float-right" (click)="open(numeroTelefono)"
-                                        style="cursor: pointer;">
-                                        modificar
-                                        <img src="../../assets/Imagenes/marca-de-verificacion.png"></span>
-                                </div>
-
-                                <div class="list-group-item">
-                                    Dirección: {{cuenta.usuario.calle_direccion}} {{cuenta.usuario.numero_direccion}}
-                                    <span class="badge-info badge-pill float-right" data-toggle="modal"
-                                        (click)="open(domicilio)" style="cursor: pointer;">
-                                        modificar
-                                        <img src="../../assets/Imagenes/marca-de-verificacion.png"></span>
-                                </div>
-                            </div>
-                        </div>
+    <!-- FIN CUERPO PÁGINA -->
+    <!-- COMIENZO MODALES -->
+    <ng-template #correoElectronico let-modal>
+        <div class="modal-header">
+            <h5 class="modal-title">Modificar Dirección de Correo Electrónico
+            </h5>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <p style="text-align: left;">Ingrese nueva dirección de
+                        correo
+                        electrónico</p>
+                    <input type="email" class="form-control" id="modificarMail" required>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            (click)="modificarMail(); modificarUsuario(); modal.close();">Guardar</button>
                     </div>
-
-
-
-                    <br>
                 </div>
-
-
-                <br>
-
-                <!-- FIN CUERPO PÁGINA -->
-                <!-- COMIENZO MODALES -->
-            </div>
-            <ng-template #correoElectronico let-modal>
-                <div class="modal-header">
-                    <h5 class="modal-title">Modificar Dirección de Correo Electrónico
-                    </h5>
-                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <p style="text-align: left;">Ingrese nueva dirección de
-                                correo
-                                electrónico</p>
-                            <input type="email" class="form-control" id="modificarMail" required>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" (click)="modificarMail(); modificarUsuario(); modal.close();">Guardar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </ng-template>
-            <ng-template #numeroTelefono let-modal>
-                <div class="modal-header">
-                    <h5 class="modal-title">Modificar Número de Teléfono
-                    </h5>
-                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <p style="text-align: left;">Ingrese nuevo número de teléfono</p>
-                            <input type="text" class="form-control" id="modificarTelefono" required>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" (click)="modificarTelefono(); modificarUsuario(); modal.close();">Guardar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </ng-template>
-            <ng-template #domicilio let-modal>
-                <div class="modal-header">
-                    <h5 class="modal-title">Modificar Domicilio
-                    </h5>
-                    <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <p style="text-align: left;">Ingrese nueva calle</p>
-                            <input type="text" class="form-control" id="modificarCalle" required>
-                            <p style="text-align: left;">Ingrese nuevo número de calle</p>
-                            <input type="text" class="form-control" id="modificarNumeroCalle" required>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" (click)="modificarDomicilio(); modificarUsuario(); modal.close();">Guardar
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </ng-template>
-            <!-- <ng-template #content let-modal>
-                <div class="modal-header">
-                  <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="dateOfBirth">Date of birth</label>
-                      <div class="input-group">
-                        <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-                        </div>
-                      </div>
+            </form>
+        </div>
+    </ng-template>
+    <ng-template #numeroTelefono let-modal>
+        <div class="modal-header">
+            <h5 class="modal-title">Modificar Número de Teléfono
+            </h5>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <p style="text-align: left;">Ingrese nuevo número de teléfono</p>
+                    <input type="text" class="form-control" id="modificarTelefono" required>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            (click)="modificarTelefono(); modificarUsuario(); modal.close();">Guardar</button>
                     </div>
-                  </form>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Save</button>
+            </form>
+        </div>
+    </ng-template>
+    <ng-template #domicilio let-modal>
+        <div class="modal-header">
+            <h5 class="modal-title">Modificar Domicilio
+            </h5>
+            <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <p style="text-align: left;">Ingrese nueva calle</p>
+                    <input type="text" class="form-control" id="modificarCalle" required>
+                    <p style="text-align: left;">Ingrese nuevo número de calle</p>
+                    <input type="text" class="form-control" id="modificarNumeroCalle" required>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            (click)="modificarDomicilio(); modificarUsuario(); modal.close();">Guardar
+                        </button>
+                    </div>
                 </div>
-              </ng-template> -->
+            </form>
+        </div>
+    </ng-template>
+
+</div>

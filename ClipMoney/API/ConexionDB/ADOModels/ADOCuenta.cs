@@ -35,10 +35,18 @@ namespace ConexionDB.ADOModels
             Cuenta cta = new Cuenta();
             string sql = $"SELECT * FROM CUENTAS WHERE usuario = '{usuario}';";
             cta = GestorBD.GetObject<Cuenta>(sql);
-            string sql2 = $"SELECT * FROM CUENTATIPO WHERE id_tipo_cuenta = '{cta.id_tipo_cuenta}';";
-            cta.cuentaTipo = GestorBD.GetObject<CuentaTipo>(sql2);
-            string sql3 = $"SELECT * FROM USUARIOS WHERE usuario = '{cta.usuario}';";
-            cta.user = GestorBD.GetObject<Usuario>(sql3);
+
+            if (cta != null)
+            {
+                string sql2 = $"SELECT * FROM CUENTATIPO WHERE id_tipo_cuenta = '{cta.id_tipo_cuenta}';";
+                cta.cuentaTipo = GestorBD.GetObject<CuentaTipo>(sql2);
+                if (cta.cuentaTipo != null) {
+                    string sqlMoneda = $"SELECT * FROM Monedas WHERE id_moneda = '{cta.cuentaTipo.id_moneda}';";
+                    cta.cuentaTipo.moneda = GestorBD.GetObject<Moneda>(sqlMoneda);
+                }
+                string sql3 = $"SELECT * FROM USUARIOS WHERE usuario = '{cta.usuario}';";
+                cta.user = GestorBD.GetObject<Usuario>(sql3);
+            }
             return cta;
         }
 

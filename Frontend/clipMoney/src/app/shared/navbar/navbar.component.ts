@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cuenta } from 'src/app/models/cuenta';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  cuentaLogueada: Cuenta;
   constructor() { }
 
   ngOnInit(): void {
+    this.cuentaLogueada = JSON.parse(localStorage.getItem('usuario'));
   }
 
 }
