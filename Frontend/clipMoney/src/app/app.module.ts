@@ -27,6 +27,7 @@ import { MicuentaComponent } from './micuenta/micuenta.component';
 import { RealizarTransferenciaComponent } from './transferencias-cuentas/modales/realizar-transferencia/realizar-transferencia.component';
 import { RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MensajesSaldosComponent } from './saldo-usuario/modales/mensajes-saldos/mensajes-saldos.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { RouterTestingModule } from '@angular/router/testing';
     TransferenciasCuentasComponent,
     AgregarCuentaAmigaComponent,
     MicuentaComponent,
-    RealizarTransferenciaComponent
+    RealizarTransferenciaComponent,
+    MensajesSaldosComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ import { RouterTestingModule } from '@angular/router/testing';
     RouterTestingModule 
   ],
   entryComponents: [
-    AgregarCuentaAmigaComponent
+    AgregarCuentaAmigaComponent,
+    MensajesSaldosComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
