@@ -77,16 +77,26 @@ namespace ConexionDB.ADOModels
 
         public bool ModificarUsuario(Usuario usuario)
         {
+
             bool resultado = false;
-            string sql = @"UPDATE USUARIOS 
+
+            try
+            {
+                string sql = @"UPDATE USUARIOS 
                         SET mail = @mail,
                             telefono = @telefono,
                             calle_direccion = @calle_direccion,
                             numero_direccion = @numero_direccion
                         WHERE usuario = @usuario;";
 
-            int cantidad = GestorBD.SaveData(sql, usuario);
-            resultado = cantidad > 0 ? true : false;
+                int cantidad = GestorBD.SaveData(sql, usuario);
+                resultado = cantidad > 0 ? true : false;
+                resultado = true;
+            }
+            catch (Exception)
+            {
+                resultado = false;
+            }
             return resultado;
         }
 

@@ -107,22 +107,22 @@ a[data-toggle="collapse"] {
     margin: 0 auto;
     text-align: center;
   }
-  
+
   .profile-header-img {
     padding: 3rem;
   }
-  
+
   .profile-header-img > img.img-circle {
     width: 120px;
     height: 120px;
     border: 2px solid #2eb1d6;
     border-radius: 50%;
   }
-  
+
   .profile-header {
     margin-top: 43px;
   }
-  
+
   /**
   * Ranking component
   */
@@ -131,13 +131,13 @@ a[data-toggle="collapse"] {
     /* z-index: 1000; */
     text-align: center;
   }
-  
+
   .label.label-default.rank-label {
     background-color: #2eb1d6;
     padding: 5px 10px 5px 10px;
     border-radius: 27px;
   }
-  
+
 .list-group-item.active {
     z-index: 2;
     color: #fff;
@@ -158,9 +158,9 @@ a[data-toggle="collapse"] {
   #carouselServicios .carousel-item{
     height: 30vh !important;
     width: auto !important;
-    
-    
-    
+
+
+
   }
   #carouselServicios .carousel-item .card img{
     height: 20vh !important;
@@ -180,7 +180,7 @@ a[data-toggle="collapse"] {
       display: block !important;
   }
 
-  
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -214,7 +214,10 @@ a[data-toggle="collapse"] {
  }
  .card-img-top{
    height: 9vh !important;
-   object-fit: cover !important; 
+   object-fit: cover !important;
+ }
+ .mat-form-field{
+   display: block !important;
  }
 @media (max-width: 640px) {
   #sidebar {

@@ -9,7 +9,7 @@
         <div class="form-group">
             <p style="text-align: center;">{{cuentaLogueada.usuario.usuario}}</p>
             <p style="text-align: center;">Tu saldo es: {{"$"+cuentaLogueada.balance}}</p>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="d-block">
                 <mat-label>Ingresa el monto</mat-label>
                 <input matInput [formControl]="montoTranferenciaControl" required>
                 <mat-icon matSuffix>attach_money</mat-icon>

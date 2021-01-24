@@ -3,6 +3,7 @@ import { CuentaService } from '../cuenta.service';
 import { UsuarioService } from '../usuario.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AbstractControl, FormControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-micuenta',
@@ -12,11 +13,26 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MicuentaComponent implements OnInit {
 
   cuenta = JSON.parse(localStorage.getItem('usuario'));
+  controlMail: FormControl;
 
   constructor(private usuarioService: UsuarioService,
     private cuentaService: CuentaService,
     private modalService: NgbModal,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar) {
+    var mailUsuario:string =  this.cuenta.usuario.mail;
+    this.controlMail = new FormControl('', [Validators.required, this.verificarMail(mailUsuario.trim())]);
+  }
+
+  verificarMail(mailUsuario: string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors => {
+      return control.value == mailUsuario ? { 'mailRepetido': true } : null;
+    };
+  }
+  getErrorMessage() {
+    if (this.controlMail.hasError('mailRepetido')) {
+      return 'El mail ingresado es el mismo que ya se encuentra registrado';
+    }
+  }
 
   ngOnInit(): void {
   }
