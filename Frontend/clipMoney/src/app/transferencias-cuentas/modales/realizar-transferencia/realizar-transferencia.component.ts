@@ -24,7 +24,8 @@ export class RealizarTransferenciaComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.cuentaLogueada = data.cuentaLogueada;
     this.cuentaDestino = data.cuentaDestino;
-    this.montoTranferenciaControl = new FormControl('', [Validators.required, this.verificarMontoTransferencia(this.cuentaLogueada.balance+this.cuentaLogueada.total_giro_descubierto)]);
+    var montoMaximo = this.cuentaLogueada.balance+this.cuentaLogueada.balance/this.cuentaLogueada.total_giro_descubierto;
+    this.montoTranferenciaControl = new FormControl('', [Validators.required, this.verificarMontoTransferencia(montoMaximo)]);
   }
 
   ngOnInit(): void {

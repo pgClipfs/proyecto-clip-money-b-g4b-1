@@ -76,7 +76,7 @@ namespace ConexionDB.ADOModels
                 }
                 else
                 {
-                    updateBalance = $"0 , total_giro_descubierto = {totalGiro - (operacion.monto - balanceOrigen)}, deuda_banco = {operacion.monto - balanceOrigen}";
+                    updateBalance = $"0 , deuda_banco = {operacion.monto - balanceOrigen}";
                 }
                 
                 string sqlUpdate = $"UPDATE Cuentas SET balance = {updateBalance } WHERE CVU = {operacion.CVU_cuenta_Origen}";
