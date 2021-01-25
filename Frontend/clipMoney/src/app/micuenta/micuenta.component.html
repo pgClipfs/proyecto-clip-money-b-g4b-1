@@ -90,10 +90,12 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
+      <form class="was-validated">
         <div class="form-group">
           <p style="text-align: left;">Ingrese nuevo número de teléfono</p>
-          <input type="text" class="form-control" id="modificarTelefono" required>
+          <input type="number" class="form-control" id="modificarTelefono" required>
+          <div class="valid-feedback">Válido.</div>
+          <div class="invalid-feedback">Por favor complete este campo.</div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary"
               (click)="modificarTelefono(); modificarUsuario(); modal.close();">Guardar</button>
@@ -111,12 +113,16 @@
       </button>
     </div>
     <div class="modal-body">
-      <form>
+      <form class="was-validated">
         <div class="form-group">
           <p style="text-align: left;">Ingrese nueva calle</p>
           <input type="text" class="form-control" id="modificarCalle" required>
+          <div class="valid-feedback">Válido.</div>
+          <div class="invalid-feedback">Por favor complete este campo.</div>
           <p style="text-align: left;">Ingrese nuevo número de calle</p>
           <input type="text" class="form-control" id="modificarNumeroCalle" required>
+          <div class="valid-feedback">Válido.</div>
+          <div class="invalid-feedback">Por favor complete este campo.</div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary"
               (click)="modificarDomicilio(); modificarUsuario(); modal.close();">Guardar
@@ -126,5 +132,4 @@
       </form>
     </div>
   </ng-template>
-
 </div>
